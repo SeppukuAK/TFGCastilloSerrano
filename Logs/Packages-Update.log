@@ -55,3 +55,14 @@ The following packages were added:
   com.unity.package-manager-ui@2.2.0
   com.unity.postprocessing@2.1.7
   com.unity.recorder@2.0.3-preview.1
+
+=== Tue Mar  3 12:06:53 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.postprocessing from version 2.1.7 to 2.3.0
+  com.unity.timeline from version 1.2.10 to 1.2.12
+The following packages were removed:
+  com.unity.package-manager-ui@2.2.0
