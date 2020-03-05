@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using VRTK;
 using BehaviorDesigner.Runtime;
+using UnityEditor;
+using UnityEngine.Animations;
+using UnityEditor.Animations;
 
 namespace TFG
 {
@@ -10,11 +13,15 @@ namespace TFG
     public class NPC : MonoBehaviour
     {
         public VRTK_SDKManager SDKManager;
+        public AnimationClip DefaultAnimation;
+
+        public AnimatorController AnimatorController { get; set; }
 
         private Transform headTransform;
         private BehaviorTree behaviorTree;
 
-    
+
+
         private void Awake()
         {
             behaviorTree = GetComponent<BehaviorTree>();//Obtenemos el árbol de comportamiento
@@ -29,9 +36,15 @@ namespace TFG
             }
 
             // Creates the controller
-            var controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath("Assets/Adri.controller");
-            DestroyImmediate(controller,true);
-            //animator.runtimeAnimatorController = controller;
+            AnimatorController = AnimatorController.CreateAnimatorControllerAtPath("Assets/Adri.controller");
+            animator.runtimeAnimatorController = AnimatorController;
+
+            string animName = DefaultAnimation.name;
+
+            //Creación de los parámetros y la transición
+            var rootStateMachine = AnimatorController.layers[0].stateMachine;
+            var newState = rootStateMachine.AddState("Default Animation");
+            newState.motion = DefaultAnimation;
 
             VRTK_SDKManager.instance.AddBehaviourToToggleOnLoadedSetupChange(this);
         }
@@ -44,17 +57,13 @@ namespace TFG
             SharedGameObject headSharedGameObject = headTransform.gameObject;
             behaviorTree.SetVariable("Head", headSharedGameObject);
             behaviorTree.EnableBehavior();//Se activa el arbol de comportamiento
-
-
         }
 
         private void OnDestroy()
         {
             VRTK_SDKManager.instance.RemoveBehaviourToToggleOnLoadedSetupChange(this);
+            AssetDatabase.DeleteAsset("Assets/Adri.controller");
         }
-        // Update is called once per frame
-        void Update()
-        {
-        }
+
     }
 }
