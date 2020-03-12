@@ -16,8 +16,7 @@ namespace TFG
         public SharedGameObject targetObject;//transform de la cámara
 
         public SharedFloat ViewAngle = 60;
-        private Vector3 NPCOrientation;
-        private Vector3 targetOrientation;
+        private float targetOrientationY;
         public override void OnAwake()
         {
             NPCTransform = GetComponent<Transform>();
@@ -27,25 +26,28 @@ namespace TFG
         {
             targetTransform = targetObject.Value.GetComponent<Transform>();
 
-            NPCOrientation = NPCTransform.rotation.eulerAngles;
-            targetOrientation = targetTransform.rotation.eulerAngles;
+
+
+
         }
         public override TaskStatus OnUpdate()
         {
-            Debug.Log(targetOrientation);
-            float idealOrientation = NPCOrientation.y + 180;
-            if (targetOrientation.y >= idealOrientation - ViewAngle.Value && targetOrientation.y <= idealOrientation + ViewAngle.Value)
-            {
-                Debug.Log("Nos estamos viendo");
-                return TaskStatus.Success;
-            }
+            targetOrientationY = targetTransform.rotation.eulerAngles.y;//Orientacion del jugador
 
-            else
-            {
-                Debug.Log("No nos estamos viendo");
+            Vector3 distance = targetTransform.position - transform.position;
+            distance.Normalize();//vector normalizada
 
-                return TaskStatus.Failure;
-            }
+            float angle = Vector3.Angle(new Vector3(targetTransform.position.x, 0, targetTransform.position.z), new Vector3(transform.position.x, 0, transform.position.z));
+
+            //TODO: Usar https://docs.unity3d.com/ScriptReference/Mathf.DeltaAngle.html
+            Debug.Log("targetOrientation" + targetOrientationY);
+
+            if (targetOrientationY - angle < 120)
+                Debug.Log("No me está mirando");
+
+            return TaskStatus.Success;
+
+
         }
     }
 }
