@@ -40,14 +40,14 @@ namespace TFG
             if (targetTransform.position.y <= crouchHeight)
             {
                 Debug.Log("El jugador está AGACHADO");
-              
+                return TaskStatus.Success;
+
             }
             else
             {
                 Debug.Log("El jugador NO está AGACHADO");
-               // return TaskStatus.Failure;
+                return TaskStatus.Failure;
             }
-            return TaskStatus.Success;
         }
     }
 }
