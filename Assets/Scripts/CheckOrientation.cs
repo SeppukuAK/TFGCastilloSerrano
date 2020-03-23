@@ -7,47 +7,47 @@ namespace TFG
 {
     [TaskDescription("Comprueba la rotacion del NPC y del jugador")]
     [TaskCategory("TFG")]
+    [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}SeekIcon.png")]
     public class CheckOrientation : Conditional
     {
-        private Transform NPCTransform;//transform del NPC
-        private Transform targetTransform;//transform de la cámara
-
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The object that we are searching for")]
-        public SharedGameObject targetObject;//transform de la cámara
+        public SharedGameObject targetObject;//Cámara
 
-        public SharedFloat ViewAngle = 60;
-        private float targetOrientationY;
-        public override void OnAwake()
-        {
-            NPCTransform = GetComponent<Transform>();
-        }
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("The angle where the player can see the NPC")]
+        public SharedFloat ViewAngle = 60;//Ángulo de visión 
+
+        private Transform targetTransform;//transform de la cámara
 
         public override void OnStart()
         {
-            targetTransform = targetObject.Value.GetComponent<Transform>();
-
-
-
-
+            targetTransform = targetObject.Value.GetComponent<Transform>();//Se obtiene el componente Transform del jugador
         }
+
         public override TaskStatus OnUpdate()
         {
-            targetOrientationY = targetTransform.rotation.eulerAngles.y;//Orientacion del jugador
+           float  targetOrientationY = targetTransform.rotation.eulerAngles.y;//Orientacion del jugador(eje Y)
 
-            Vector3 distance = targetTransform.position - transform.position;
-            distance.Normalize();//vector normalizada
+            Vector3 distance = transform.position - targetTransform.position;//Distancia entre el jugador y el NPC
+            distance.y = 0;//El cálculo de distancias solo aplica al eje XZ
+            distance.Normalize();//Vector normalizado
 
-            float angle = Vector3.Angle(new Vector3(targetTransform.position.x, 0, targetTransform.position.z), new Vector3(transform.position.x, 0, transform.position.z));
+            Quaternion rotation = Quaternion.LookRotation(distance, Vector3.forward);//Ángulo(En Quaternion) formado por la distancia entre el jugador y el NPC y el vector forward(0,0,1)
+            float transformedAngle = rotation.eulerAngles.y;//Transformación a ángulos de euler
 
-            //TODO: Usar https://docs.unity3d.com/ScriptReference/Mathf.DeltaAngle.html
-            Debug.Log("targetOrientation" + targetOrientationY);
+            //Se comprueba si la diferencia entre el ángulo distancia entre el jugador y el NPC y la orientación del jugador tiene un valor mayor o menor al  ángulo de visión del jugador
 
-            if (targetOrientationY - angle < 120)
-                Debug.Log("No me está mirando");
-
-            return TaskStatus.Success;
-
-
+            //Si la diferencia es mayor, el jugador no puede ver al NPC
+            if (Mathf.Abs(Mathf.DeltaAngle(transformedAngle, targetOrientationY)) > ViewAngle.Value)
+            {
+                //Debug.Log("El jugador puede ver al NPC");
+                return TaskStatus.Failure;
+            }
+            //Si la diferencia es menor, el jugador puede ver al NPC
+            else
+            {
+                //Debug.Log("El jugador NO puede ver al NPC");
+                return TaskStatus.Success;
+            }
         }
     }
 }

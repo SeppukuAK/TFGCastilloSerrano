@@ -20,6 +20,8 @@ namespace TFG
         private Transform headTransform;
         private BehaviorTree behaviorTree;
 
+        public float StandardPlayerHeight { get; set; }
+
 
 
         private void Awake()
@@ -47,6 +49,8 @@ namespace TFG
             newState.motion = DefaultAnimation;
 
             VRTK_SDKManager.instance.AddBehaviourToToggleOnLoadedSetupChange(this);
+
+
         }
 
         // Start is called before the first frame update
@@ -57,6 +61,10 @@ namespace TFG
             SharedGameObject headSharedGameObject = headTransform.gameObject;
             behaviorTree.SetVariable("Head", headSharedGameObject);
             behaviorTree.EnableBehavior();//Se activa el arbol de comportamiento
+
+            //Se obtiene la altura inicial de la cabeza
+            StandardPlayerHeight = headTransform.position.y;
+            Debug.Log(StandardPlayerHeight);
         }
 
         private void OnDestroy()
