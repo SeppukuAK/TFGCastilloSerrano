@@ -120,7 +120,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 09d394f8752d6bd42bee74a6047d5968, type: 2}
 --- !u!1 &133303238
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &133303239
 MeshCollider:
@@ -210,7 +210,7 @@ Transform:
   m_GameObject: {fileID: 133303238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -662,6 +662,91 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: gizmoViewMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.JSONSerialization
+      value: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(204.057632,54.0919647)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(4.827591,112.861664)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0.5926628,126.905609)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-187.7586,203.85466)"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"TFG.CheckOrientation","NodeData":{"Offset":"(-1437.67163,388.9131)","Comment":"CONDICION:
+        EL JUGADOR ESTA \"ATENTO\" AL NPC"},"ID":4,"Name":"Check Orientation","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedFloatViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":60}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.CanSeeObject","NodeData":{"Offset":"(-1312.72559,688.9131)","Comment":"CONDICION:
+        EL JUGADOR ES VISTO POR EL NPC "},"ID":5,"Name":"Can See Object","Instant":true,"BooleanusePhysics2D":false,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedGameObjectListtargetObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":null,"List`1mValue":[]},"SharedStringtargetTag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":""},"LayerMaskobjectLayerMask":0,"Int32maxCollisionCount":200,"LayerMaskignoreLayerMask":4,"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":20},"SharedVector3offset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedVector3targetOffset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,-0.1,0)"},"SharedFloatangleOffset2D":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0},"SharedBooluseTargetBone":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"HumanBodyBonestargetBone":"Hips","SharedBooldisableAgentColliderLayer":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-898.113159,2101.72021)","Comment":"CONDICION: 
+        EL JUGADOR SE ENCUENTRA A UNA DISTANCIA CONCRETA DEL NPC\n\n3 DISTANCIAS
+        POSIBLES: MINIMA, MEDIA Y MAXIMA"},"ID":6,"Name":"Proxemical","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(383.579346,1413.459)","Comment":"CONDICION:
+        EL JUGADOR MIRA FIJAMENTE AL NPC\n\nACCION: EL NPC DA UN MENSAJE DE QUE LE
+        DEJE DE MIRAR (TODO: ANIMACION INCOMODO)\n"},"ID":7,"Name":"Player Stares
+        At The NPC","Instant":true,"ExternalBehavior[]externalBehaviors":[1],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1195.76172,2023.40088)","Comment":"CONDICION:
+        EL JUGADOR ESTA AGACHADO\n\nACCION: EL NPC SE AGACHA"},"ID":8,"Name":"Crouching","Instant":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[],"Booleancollapsed":false}]},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1212.90356,877.914734)","Comment":"CONDICION:
+        EL JUGADOR ESTA DANDO LA ESPALDA AL NPC\n\nACCION: EL NPC TAMBIEN DA LA ESPALDA
+        AL JUGADOR"},"ID":9,"Name":"Player Gives The Back","Instant":true,"ExternalBehavior[]externalBehaviors":[3],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(1649.31812,210.9654)","Comment":"ACCION:
+        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":10,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":4},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(2414.13086,1797.45093)","Comment":"Deteccion
+        input\n"},"ID":11,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-583.6363,240)","Comment":"Bailar
+        al Pulsar Tecla"},"ID":12,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityInput.IsKeyDown","NodeData":{"Offset":"(-150,160)"},"ID":13,"Name":"Is
+        Key Down","Instant":true,"KeyCodekey":"A"},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(0,160)"},"ID":14,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":"","AnimationClipmValue":5},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.5},"SharedFloatAnimDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(140,160)"},"ID":15,"Name":"Wait","Instant":true,"Disabled":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-156.8182,230)","Comment":"Bailar
+        al Pulsar Tecla"},"ID":16,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityInput.IsKeyDown","NodeData":{"Offset":"(-149.930817,157.70752)"},"ID":17,"Name":"Is
+        Key Down","Instant":true,"KeyCodekey":"B"},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(4.47275639,161.921692)"},"ID":18,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":"","AnimationClipmValue":6},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.5},"SharedFloatAnimDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(143.019928,163.0769)"},"ID":19,"Name":"Wait","Instant":true,"Disabled":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(245,245)"},"ID":20,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityInput.IsKeyDown","NodeData":{"Offset":"(-76.94809,117.142853)"},"ID":21,"Name":"Is
+        Key Down","Instant":true,"KeyCodekey":"C"},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(104.983582,126.11412)"},"ID":22,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":"","AnimationClipmValue":7},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.5},"SharedFloatAnimDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(533.666748,184.166672)"},"ID":23,"Name":"Idle","Instant":true}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0}]}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2afbfe7dbf692304da7fcb74a4b07c25,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5ec59744dff85024f9da25d9be993449,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: c5e8907a4c42b1348af26c152fe217e3,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2afbfe7dbf692304da7fcb74a4b07c25,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 67c07a7141ca4564e9bc89335986a975,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
+      value: 
+      objectReference: {fileID: 7400000, guid: 6b64f85c5ee58984a8e4d87ffdce9b5d, type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[5]
+      value: 
+      objectReference: {fileID: 7400000, guid: e7fa3aa78b48c584fbee583a7c532655, type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 7400000, guid: 13a6028bbfeabbe4a91cb3339acabfa4, type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 7400000, guid: 9320442ecbaf905429dac366ee003323, type: 2}
     - target: {fileID: 7982114179581784149, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: m_Name

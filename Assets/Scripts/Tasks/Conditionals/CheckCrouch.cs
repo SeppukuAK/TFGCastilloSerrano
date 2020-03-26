@@ -45,7 +45,7 @@ namespace TFG
             }
             else
             {
-                Debug.Log("El jugador NO está AGACHADO");
+             //   Debug.Log("El jugador NO está AGACHADO");
                 return TaskStatus.Failure;
             }
         }
