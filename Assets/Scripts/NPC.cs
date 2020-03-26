@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VRTK;
 using BehaviorDesigner.Runtime;
 using UnityEditor;
 using UnityEngine.Animations;
@@ -12,7 +11,6 @@ namespace TFG
     [RequireComponent(typeof(Animator))]
     public class NPC : MonoBehaviour
     {
-        public VRTK_SDKManager SDKManager;
         public AnimationClip DefaultAnimation;
 
         public AnimatorController AnimatorController { get; set; }
@@ -58,14 +56,12 @@ namespace TFG
             defaultTransition.AddCondition(AnimatorConditionMode.If, 0, defaultTriggerName);
             defaultTransition.hasExitTime = true;
             defaultTransition.duration = 0.5f;
-
-            VRTK_SDKManager.instance.AddBehaviourToToggleOnLoadedSetupChange(this);
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            headTransform = VRTK_DeviceFinder.DeviceTransform(VRTK_DeviceFinder.Devices.Headset);//Obtenemos el headset activo
+            headTransform = Camera.main.transform;//Obtenemos el headset activo
 
             SharedGameObject headSharedGameObject = headTransform.gameObject;
             behaviorTree.SetVariable("Head", headSharedGameObject);
@@ -78,7 +74,6 @@ namespace TFG
 
         private void OnDestroy()
         {
-            VRTK_SDKManager.instance.RemoveBehaviourToToggleOnLoadedSetupChange(this);
             AssetDatabase.DeleteAsset("Assets/Adri.controller");
         }
 
