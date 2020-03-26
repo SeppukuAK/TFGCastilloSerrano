@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: Crouching
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Gesture
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-143.140228,-0.00936889648)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(5,305)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"TFG.CheckCrouch","NodeData":{"Offset":"(-439.697876,275.898651)","Comment":"DETECTA
+        SI EL JUGADOR SE HA AGACHADO"},"ID":2,"Name":"Check Crouch","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedIntcrouchHeightPercentage":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":20}},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(-12.3809528,462.857117)","Comment":"ANIMACION
+        DE AGACHARSE"},"ID":3,"Name":"Play Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":0},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedFloatAnimDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0}},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(353.8462,345.384583)","Comment":"ANIMACION
+        DE MANTENERSE AGACHADO"},"ID":4,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":1},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"AnimDuration","IsShared":true,"SinglemValue":0}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: -203655887218126122, guid: 31bd156e3105ddc4ab531c175619f39d, type: 3}
+        - {fileID: -203655887218126122, guid: 72a5edbc625ccd74bbe6beaf78580eee, type: 3}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.4

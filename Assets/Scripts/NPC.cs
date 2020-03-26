@@ -20,6 +20,8 @@ namespace TFG
         private Transform headTransform;
         private BehaviorTree behaviorTree;
 
+        public string defaultTriggerName;
+
         public float StandardPlayerHeight { get; set; }
 
 
@@ -48,9 +50,16 @@ namespace TFG
             var newState = rootStateMachine.AddState("Default Animation");
             newState.motion = DefaultAnimation;
 
+            defaultTriggerName = "Trigger Default";
+
+            //transicion de cualquier estado al default
+            var defaultTransition = rootStateMachine.AddAnyStateTransition(rootStateMachine.defaultState);
+            AnimatorController.AddParameter(defaultTriggerName, AnimatorControllerParameterType.Trigger);
+            defaultTransition.AddCondition(AnimatorConditionMode.If, 0, defaultTriggerName);
+            defaultTransition.hasExitTime = true;
+            defaultTransition.duration = 0.5f;
+
             VRTK_SDKManager.instance.AddBehaviourToToggleOnLoadedSetupChange(this);
-
-
         }
 
         // Start is called before the first frame update
