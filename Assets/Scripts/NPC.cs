@@ -22,12 +22,8 @@ namespace TFG
 
         public float StandardPlayerHeight { get; set; }
 
-
-
         private void Awake()
         {
-            behaviorTree = GetComponent<BehaviorTree>();//Obtenemos el árbol de comportamiento
-
             Animator animator = GetComponent<Animator>();
 
             //https://docs.unity3d.com/ScriptReference/Animations.AnimatorController.html?_ga=2.239912643.1726044905.1583340668-154422748.1555576536
@@ -56,11 +52,10 @@ namespace TFG
             defaultTransition.AddCondition(AnimatorConditionMode.If, 0, defaultTriggerName);
             defaultTransition.hasExitTime = true;
             defaultTransition.duration = 0.5f;
-        }
 
-        // Start is called before the first frame update
-        void Start()
-        {
+
+            behaviorTree = GetComponent<BehaviorTree>();//Obtenemos el árbol de comportamiento
+
             headTransform = Camera.main.transform;//Obtenemos el headset activo
 
             SharedGameObject headSharedGameObject = headTransform.gameObject;
@@ -69,7 +64,7 @@ namespace TFG
 
             //Se obtiene la altura inicial de la cabeza
             StandardPlayerHeight = headTransform.position.y;
-            Debug.Log(StandardPlayerHeight);
+
         }
 
         private void OnDestroy()
