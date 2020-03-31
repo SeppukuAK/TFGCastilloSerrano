@@ -42,5 +42,7 @@ namespace TFG
             NPC.GetComponent<BehaviorTree>().SetVariable("Head", head);
             Destroy(this.gameObject);
         }
+
+
     }
 }
