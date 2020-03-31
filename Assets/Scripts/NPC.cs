@@ -24,6 +24,17 @@ namespace TFG
 
         private void Awake()
         {
+
+            //----------------------------
+
+
+
+
+
+            //----------------------------
+
+
+
             Animator animator = GetComponent<Animator>();
 
             //https://docs.unity3d.com/ScriptReference/Animations.AnimatorController.html?_ga=2.239912643.1726044905.1583340668-154422748.1555576536
@@ -34,7 +45,7 @@ namespace TFG
             }
 
             // Creates the controller
-            AnimatorController = AnimatorController.CreateAnimatorControllerAtPath("Assets/Adri.controller");
+            AnimatorController = AnimatorController.CreateAnimatorControllerAtPath("Assets/Controller.controller");
             animator.runtimeAnimatorController = AnimatorController;
 
             string animName = DefaultAnimation.name;
@@ -56,20 +67,20 @@ namespace TFG
 
             behaviorTree = GetComponent<BehaviorTree>();//Obtenemos el árbol de comportamiento
 
+            //Camara del XRRig
             headTransform = Camera.main.transform;//Obtenemos el headset activo
 
             SharedGameObject headSharedGameObject = headTransform.gameObject;
             behaviorTree.SetVariable("Head", headSharedGameObject);
             behaviorTree.EnableBehavior();//Se activa el arbol de comportamiento
 
-            //Se obtiene la altura inicial de la cabeza
             StandardPlayerHeight = headTransform.position.y;
-
+            //TODO: CAMBIAR EL NOMBRE DE HEAD
         }
 
         private void OnDestroy()
         {
-            AssetDatabase.DeleteAsset("Assets/Adri.controller");
+            AssetDatabase.DeleteAsset("Assets/Controller.controller");
         }
 
     }

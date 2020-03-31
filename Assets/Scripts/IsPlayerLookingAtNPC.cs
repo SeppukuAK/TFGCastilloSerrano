@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class IsPlayerLookingAtNPC : MonoBehaviour
 {
-    private Transform headTransform;
-
-    void Start()
-    {
-        headTransform = Camera.main.transform;//Obtenemos el headset activo
-    }
-
-
-
     void Update()
     {
         RaycastHit hit;
+        Vector3 headPosition = Camera.main.transform.position;
 
-        //Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+        //Se comprueba si el rayo que se lanza desde el jugador colisiona con el NPC
+        if (Physics.Raycast(headPosition, Camera.main.transform.forward, out hit))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
-            Debug.Log("Did Hit");
+            Debug.DrawRay(headPosition, Camera.main.transform.forward * hit.distance, Color.green);
+           // Debug.Log(hit.collider.name);
+            //empezar contador
         }
         else
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 1000, Color.white);
-            Debug.Log("Did not Hit");
+            Debug.DrawRay(headPosition, Camera.main.transform.forward, Color.blue);
+           // Debug.Log("Did not Hit");
         }
     }
 

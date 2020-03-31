@@ -5,6 +5,11 @@ using BehaviorDesigner.Runtime;
 
 namespace TFG
 {
+    /// <summary>
+    /// Configura la escena para Debug. 
+    /// Si está el casco conectado, se borra el simulator y se ejecuta como el juego en realidad
+    /// Si no está conectado, se borra el XRRig y se configura la escena para que funcione el simulador
+    /// </summary>
     public class DebugManager : MonoBehaviour
     {
         public XRRig XRRig;
@@ -38,8 +43,12 @@ namespace TFG
 
         private void Start()
         {
+            //Camara del simulador
             SharedGameObject head = playerSimulator.GetComponentInChildren<Camera>().gameObject;
             NPC.GetComponent<BehaviorTree>().SetVariable("Head", head);
+
+            //Se obtiene la altura inicial de la cabeza
+            NPC.StandardPlayerHeight = head.Value.transform.position.y;
             Destroy(this.gameObject);
         }
     }
