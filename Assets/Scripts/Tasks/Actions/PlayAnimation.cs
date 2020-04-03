@@ -19,8 +19,12 @@ namespace TFG
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The duration of the transition between the previous animation and this animation")]
         public SharedFloat TransitionDuration;
 
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The duration of the animation")]
-        public SharedFloat AnimDuration;
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Boolean to set the animation to idle after this anim ends")]
+        public SharedBool GoToIdle;
+
+
+
+        private float AnimDuration;//Duración de la animación
 
         private Animator animator;
         private string triggerName;//Name of the trigger
@@ -47,7 +51,7 @@ namespace TFG
             resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
             resetTransition.duration = TransitionDuration.Value;
 
-            AnimDuration.Value = AnimationClip.Value.length;
+            AnimDuration = AnimationClip.Value.length;
         }
 
         public override void OnStart()
@@ -62,8 +66,13 @@ namespace TFG
 
             //Se comprueba si la animación ha terminado de reproducirse
             if (ended)
+            {
+                //Caso en el que esta activada la opción de ir a idle después de terminar esta animación
+               if(GoToIdle.Value)
+                    GetComponent<Animator>().SetTrigger(GetComponent<NPC>().defaultTriggerName);
                 return TaskStatus.Success;
-            
+            }
+
             else
                 return TaskStatus.Running;
         }
@@ -71,7 +80,7 @@ namespace TFG
         //Corrutina de espera hasta el fin de la animación
         IEnumerator WaitForAnimation()
         {
-            yield return new WaitForSeconds(AnimDuration.Value);
+            yield return new WaitForSeconds(AnimDuration);
             ended = true;
         }
 

@@ -25,16 +25,6 @@ namespace TFG
         private void Awake()
         {
 
-            //----------------------------
-
-
-
-
-
-            //----------------------------
-
-
-
             Animator animator = GetComponent<Animator>();
 
             //https://docs.unity3d.com/ScriptReference/Animations.AnimatorController.html?_ga=2.239912643.1726044905.1583340668-154422748.1555576536
