@@ -51,5 +51,7 @@ namespace TFG
             NPC.StandardPlayerHeight = head.Value.transform.position.y;
             Destroy(this.gameObject);
         }
+
+
     }
 }
