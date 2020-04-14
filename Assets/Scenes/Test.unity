@@ -1974,10 +1974,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1410249595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcf9a0d0f6f47c7498a6ad0b641e2021, type: 3}
+  m_Script: {fileID: 11500000, guid: b3a3b547ba51a144993a79123db9897f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumTrainingSamples: 20
+  GestureSimilarity: 0.5
+  RecognitionInterval: 0.1
+  GesturePeriod: 1
+  LoadGesturesFile: Sample_Continuous_Gestures.dat
 --- !u!4 &1410249597
 Transform:
   m_ObjectHideFlags: 0
