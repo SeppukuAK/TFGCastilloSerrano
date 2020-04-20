@@ -121,7 +121,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 09d394f8752d6bd42bee74a6047d5968, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c7b0f52d81ff2f945b22db40ac872035, type: 2}
 --- !u!1 &5083335
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BubbleGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 30263278301245441, guid: 86f1e130be26d544cb16ee5ce13847c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3904864498203525650, guid: 86f1e130be26d544cb16ee5ce13847c4,
         type: 3}
@@ -1778,6 +1783,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MeatSlice
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 4b244d23936834d418f18b8cf6c67556,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b244d23936834d418f18b8cf6c67556, type: 3}
 --- !u!1 &1360874810 stripped
@@ -2580,6 +2590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fuse
       objectReference: {fileID: 0}
+    - target: {fileID: 3030152227296088729, guid: 3341466b7de624346be882932da05b6d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3924593849829089596, guid: 3341466b7de624346be882932da05b6d,
         type: 3}
       propertyPath: m_InteractionManager
@@ -2739,6 +2754,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fusebox
+      objectReference: {fileID: 0}
+    - target: {fileID: 3879379326887835974, guid: 9d10edaecc9279d41baf1d5e360afc08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d10edaecc9279d41baf1d5e360afc08, type: 3}
