@@ -39,8 +39,8 @@ public class MasterController : MonoBehaviour
     XRInteractorLineVisual m_RightLineVisual;
     XRInteractorLineVisual m_LeftLineVisual;
 
-    HandPrefab m_RightHandPrefab;
-    HandPrefab m_LeftHandPrefab;
+    protected HandPrefab m_RightHandPrefab;
+    protected HandPrefab m_LeftHandPrefab;
     
     XRReleaseController m_RightController;
     XRReleaseController m_LeftController;
@@ -56,7 +56,7 @@ public class MasterController : MonoBehaviour
     
     List<XRBaseInteractable> m_InteractableCache = new List<XRBaseInteractable>(16);
 
-    void Awake()
+    protected virtual void Awake()
     {
         s_Instance = this;
         m_Rig = GetComponent<XRRig>();
@@ -73,7 +73,7 @@ public class MasterController : MonoBehaviour
         InputDevices.deviceConnected -= RegisterDevices;
     }
 
-    void Start()
+    protected virtual void Start()
     {
         m_RightLineVisual = RightTeleportInteractor.GetComponent<XRInteractorLineVisual>();
         m_RightLineVisual.enabled = false;
@@ -134,7 +134,7 @@ public class MasterController : MonoBehaviour
         }
     }
     
-    void Update()
+    protected virtual void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();

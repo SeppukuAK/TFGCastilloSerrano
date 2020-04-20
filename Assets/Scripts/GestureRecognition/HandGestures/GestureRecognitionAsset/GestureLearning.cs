@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class GestureGame : MonoBehaviour
+public class GestureLearning : MonoBehaviour
 {
     void Start()
     {
@@ -22,7 +22,6 @@ public class GestureGame : MonoBehaviour
         //gestureRecognition.stopTraining();
 
         //Debug.Log("Gesture Identification Performance (Valor de 1 significa reconocimiento 100% correcto) " + gestureRecognition.recognitionScore());
-
     }
 
 }

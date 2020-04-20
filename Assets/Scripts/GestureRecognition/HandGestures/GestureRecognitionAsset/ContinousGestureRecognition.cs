@@ -99,19 +99,6 @@ namespace TFG
         /// </summary>
         private void Update()
         {
-            //XRController XRController = rightHand.GetComponent<XRController>();
-            //XRController.i
-            //if (triggerRight < 0.5f)
-            //    handState = HandState.OPEN_HAND;
-            //else
-            //{
-            //    handState = HandState.CLOSED_HAND;
-            //    Debug.Log("MANO CERRADA");
-            //}
-
-
-
-
             //Instruciones mientras se realiza el reconocimiento de gesto
             Vector3 controllerPos = rightHand.transform.position;
             Quaternion controllerRotation = rightHand.transform.rotation;
