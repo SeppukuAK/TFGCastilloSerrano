@@ -14,15 +14,15 @@ namespace TFG
     {
         public SharedBool IsGivingTheBack;
 
-        public override void OnStart()
-        {
-            IsGivingTheBack.Value = true;
-        }
+        //public override void OnStart()
+        //{
+        //    IsGivingTheBack.Value = true;
+        //}
 
-        //Establece a false la booleana de dar la espalda
-        public override void OnEnd()
-        {
-            IsGivingTheBack.Value = false;
-        }
+        ////Establece a false la booleana de dar la espalda
+        //public override void OnEnd()
+        //{
+        //    IsGivingTheBack.Value = false;
+        //}
     }
 }
