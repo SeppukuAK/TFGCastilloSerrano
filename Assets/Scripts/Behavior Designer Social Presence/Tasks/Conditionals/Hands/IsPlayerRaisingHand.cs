@@ -18,8 +18,8 @@ namespace TFG
         public SharedFloat Diff;
 
         private Transform head;
-        private Transform leftHand;
-        private Transform rightHand;
+        private ControllerState leftHand;
+        private ControllerState rightHand;
 
         /// <summary>
         /// Obtiene referencias a variables
@@ -27,8 +27,8 @@ namespace TFG
         public override void OnStart()
         {
             head = Camera.main.transform;
-            leftHand = MasterController.Instance.LeftDirectInteractor.transform;
-            rightHand = MasterController.Instance.RightDirectInteractor.transform;
+            leftHand = MasterController.Instance.LeftDirectInteractor.GetComponent<ControllerState>();
+            rightHand = MasterController.Instance.RightDirectInteractor.GetComponent<ControllerState>();
         }
 
         /// <summary>
@@ -37,13 +37,13 @@ namespace TFG
         /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
-            bool leftUp = IsHandUp(leftHand);
-            bool rightUp = IsHandUp(rightHand);
+            bool leftUp = IsHandUp(leftHand.transform);
+            bool rightUp = IsHandUp(rightHand.transform);
 
             //Solo la mano izquierda levantada
             if (leftUp && !rightUp)
             {
-                HandState handState = MyMasterController.MyInstance.LeftHandState;
+                HandState handState = leftHand.HandState;
                 if (handState == HandState.OPEN || handState == HandState.POINTING)
                     return TaskStatus.Success;
             }
@@ -51,7 +51,7 @@ namespace TFG
             //Solo la mano derecha levantada
             else if (!leftUp && rightUp)
             {
-                HandState handState = MyMasterController.MyInstance.RightHandState;
+                HandState handState = rightHand.HandState;
                 if (handState == HandState.OPEN || handState == HandState.POINTING)
                     return TaskStatus.Success;
             }

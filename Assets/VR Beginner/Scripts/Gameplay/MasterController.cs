@@ -20,7 +20,7 @@ public class MasterController : MonoBehaviour
     public bool DisableSetupForDebug = false;
     public Transform StartingPosition;
     public GameObject TeleporterParent;
-    
+
     [Header("Reference")]
     public XRRayInteractor RightTeleportInteractor;
     public XRRayInteractor LeftTeleportInteractor;
@@ -30,18 +30,18 @@ public class MasterController : MonoBehaviour
 
     public MagicTractorBeam RightTractorBeam;
     public MagicTractorBeam LeftTractorBeam;
-    
+
     XRRig m_Rig;
-    
+
     InputDevice m_LeftInputDevice;
     InputDevice m_RightInputDevice;
 
     XRInteractorLineVisual m_RightLineVisual;
     XRInteractorLineVisual m_LeftLineVisual;
 
-    protected HandPrefab m_RightHandPrefab;
-    protected HandPrefab m_LeftHandPrefab;
-    
+    HandPrefab m_RightHandPrefab;
+    HandPrefab m_LeftHandPrefab;
+
     XRReleaseController m_RightController;
     XRReleaseController m_LeftController;
 
@@ -53,19 +53,18 @@ public class MasterController : MonoBehaviour
 
     LayerMask m_OriginalRightMask;
     LayerMask m_OriginalLeftMask;
-    
+
     List<XRBaseInteractable> m_InteractableCache = new List<XRBaseInteractable>(16);
 
-    protected virtual void Awake()
+    void Awake()
     {
         s_Instance = this;
         m_Rig = GetComponent<XRRig>();
-       
     }
 
     void OnEnable()
     {
-         InputDevices.deviceConnected += RegisterDevices;
+        InputDevices.deviceConnected += RegisterDevices;
     }
 
     void OnDisable()
@@ -73,7 +72,7 @@ public class MasterController : MonoBehaviour
         InputDevices.deviceConnected -= RegisterDevices;
     }
 
-    protected virtual void Start()
+    void Start()
     {
         m_RightLineVisual = RightTeleportInteractor.GetComponent<XRInteractorLineVisual>();
         m_RightLineVisual.enabled = false;
@@ -86,25 +85,25 @@ public class MasterController : MonoBehaviour
 
         m_OriginalRightMask = RightTeleportInteractor.interactionLayerMask;
         m_OriginalLeftMask = LeftTeleportInteractor.interactionLayerMask;
-        
+
         if (!DisableSetupForDebug)
         {
             transform.position = StartingPosition.position;
             transform.rotation = StartingPosition.rotation;
-            
-            if(TeleporterParent != null)
+
+            if (TeleporterParent != null)
                 TeleporterParent.SetActive(false);
         }
-        
+
         InputDeviceCharacteristics leftTrackedControllerFilter = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Left;
         List<InputDevice> foundControllers = new List<InputDevice>();
-        
+
         InputDevices.GetDevicesWithCharacteristics(leftTrackedControllerFilter, foundControllers);
 
         if (foundControllers.Count > 0)
             m_LeftInputDevice = foundControllers[0];
-        
-        
+
+
         InputDeviceCharacteristics rightTrackedControllerFilter = InputDeviceCharacteristics.HeldInHand | InputDeviceCharacteristics.Right;
 
         InputDevices.GetDevicesWithCharacteristics(rightTrackedControllerFilter, foundControllers);
@@ -133,12 +132,12 @@ public class MasterController : MonoBehaviour
             }
         }
     }
-    
-    protected virtual void Update()
+
+    void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
             Application.Quit();
-        
+
         RightTeleportUpdate();
         LeftTeleportUpdate();
     }
@@ -147,23 +146,23 @@ public class MasterController : MonoBehaviour
     {
         Vector2 axisInput;
         m_RightInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisInput);
-        
+
         m_RightLineVisual.enabled = axisInput.y > 0.5f;
-        
+
         RightTeleportInteractor.InteractionLayerMask = m_LastFrameRightEnable ? m_OriginalRightMask : new LayerMask();
-        
+
         if (axisInput.y <= 0.5f && m_PreviousRightClicked)
         {
             m_RightController.Select();
         }
 
-        
+
         if (axisInput.y <= -0.5f)
         {
-            if(!RightTractorBeam.IsTracting)
+            if (!RightTractorBeam.IsTracting)
                 RightTractorBeam.StartTracting();
         }
-        else if(RightTractorBeam.IsTracting)
+        else if (RightTractorBeam.IsTracting)
         {
             RightTractorBeam.StopTracting();
         }
@@ -189,26 +188,26 @@ public class MasterController : MonoBehaviour
     {
         Vector2 axisInput;
         m_LeftInputDevice.TryGetFeatureValue(CommonUsages.primary2DAxis, out axisInput);
-        
+
         m_LeftLineVisual.enabled = axisInput.y > 0.5f;
-        
+
         LeftTeleportInteractor.InteractionLayerMask = m_LastFrameLeftEnable ? m_OriginalLeftMask : new LayerMask();
-        
+
         if (axisInput.y <= 0.5f && m_PreviousLeftClicked)
         {
             m_LeftController.Select();
         }
-        
+
         if (axisInput.y <= -0.5f)
         {
-            if(!LeftTractorBeam.IsTracting)
+            if (!LeftTractorBeam.IsTracting)
                 LeftTractorBeam.StartTracting();
         }
-        else if(LeftTractorBeam.IsTracting)
+        else if (LeftTractorBeam.IsTracting)
         {
             LeftTractorBeam.StopTracting();
         }
-        
+
         //if the left animator is null, we try to get it. It's not the best performance wise but no other way as setup
         //of the model by the Interaction Toolkit is done on the first update.
         if (m_LeftHandPrefab == null)
@@ -217,10 +216,10 @@ public class MasterController : MonoBehaviour
         }
 
         m_PreviousLeftClicked = axisInput.y > 0.5f;
-        
+
         if (m_LeftHandPrefab != null)
             m_LeftHandPrefab.Animator.SetBool("Pointing", m_PreviousLeftClicked);
-        
+
         m_LastFrameLeftEnable = m_LeftLineVisual.enabled;
     }
 }

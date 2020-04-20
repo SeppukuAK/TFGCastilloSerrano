@@ -17,16 +17,16 @@ namespace TFG
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Distancia máxima desde la que se detecta que está señalando al objeto")]
         public SharedFloat PointingDistance;
 
-        private Transform leftHand;
-        private Transform rightHand;
+        private ControllerState leftHand;
+        private ControllerState rightHand;
 
         /// <summary>
         /// Obtiene referencias a variables
         /// </summary>
         public override void OnStart()
         {
-            leftHand = MasterController.Instance.LeftDirectInteractor.transform;
-            rightHand = MasterController.Instance.RightDirectInteractor.transform;
+            leftHand = MasterController.Instance.LeftDirectInteractor.GetComponent<ControllerState>();
+            rightHand = MasterController.Instance.RightDirectInteractor.GetComponent<ControllerState>();
         }
 
         /// <summary>
@@ -35,9 +35,9 @@ namespace TFG
         /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
-            if (MyMasterController.MyInstance.LeftHandState == HandState.POINTING && RaycastCollideWithObject(leftHand))
+            if (leftHand.HandState == HandState.POINTING && RaycastCollideWithObject(leftHand.transform))
                 return TaskStatus.Success;
-            else if (MyMasterController.MyInstance.RightHandState == HandState.POINTING && RaycastCollideWithObject(rightHand))
+            else if (rightHand.HandState == HandState.POINTING && RaycastCollideWithObject(rightHand.transform))
                 return TaskStatus.Success;
             else
                 return TaskStatus.Failure;
