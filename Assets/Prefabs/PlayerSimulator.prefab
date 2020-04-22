@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4001238558182413664}
   - component: {fileID: 4001238558182413665}
   - component: {fileID: 4001238558182413671}
+  - component: {fileID: -40385787662280319}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PlayerSimulator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,6 +67,18 @@ MonoBehaviour:
   Controller: {fileID: 4001238558182413665}
   Speed: 3
   Gravity: -9.81
+--- !u!114 &-40385787662280319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4001238558182413666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c9de2f043e0bf24a90a5a60c86c3d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4001238558522707125
 GameObject:
   m_ObjectHideFlags: 0
