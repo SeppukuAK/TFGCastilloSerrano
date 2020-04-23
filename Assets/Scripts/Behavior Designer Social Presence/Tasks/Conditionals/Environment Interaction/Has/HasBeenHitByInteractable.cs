@@ -22,7 +22,7 @@ namespace TFG
 
         public override void OnCollisionEnter(Collision collision)
         {
-            if (collision.collider.GetComponent<XRBaseInteractable>())
+            if (collision.gameObject.GetComponent<XRBaseInteractable>())
                 enteredCollision = true;
         }
 
