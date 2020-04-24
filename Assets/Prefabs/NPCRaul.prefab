@@ -5132,38 +5132,17 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(204.057632,54.0919647)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(4.827591,112.861633)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,270)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-1225.17822,608.4585)","Comment":"CONDICION:
-        EL JUGADOR ESTA DEMASIADO CERCA DEL NPC\n\nACCION: EL NPC SE DA LA VUELTA
-        Y HUYE"},"ID":3,"Name":"Minimum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-328.478271,1792.17456)"},"ID":4,"Name":"Is
-        frightened from behind","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[1],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(117.272728,785.908936)","Comment":"CONDICION:
-        EL JUGADOR ESTA MUY CERCA DEL NPC\n\nACCION: EL NPC HACE UNA ANIMACION DE
-        SENTIRSE INCOMODO"},"ID":5,"Name":"Medium distance","Instant":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(785.3811,985.658569)","Comment":"CONDICION:
-        EL JUGADOR ESTA DEMASIADO LEJOS DEL NPC SE ACERCA AL PERSONAJE\n\nACCION: 
-        EL NPC SE ACERCA AL PERSONAJE"},"ID":6,"Name":"Maximum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[3],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1393.532,591.904663)","Comment":"CONDICION:
-        EL JUGADOR ESTA AGACHADO\n\nACCION: EL NPC SE AGACHA"},"ID":7,"Name":"Crouching","Instant":true,"ExternalBehavior[]externalBehaviors":[4],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1667.01257,1398.13562)","Comment":"CONDICION:
-        EL JUGADOR ESTA DANDO LA ESPALDA AL NPC\n\nACCION: EL NPC TAMBIEN DA LA ESPALDA
-        AL JUGADOR"},"ID":8,"Name":"Player Gives The Back","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[5],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1739.29163,1674.84155)","Comment":"CONDICION:
-        EL JUGADOR MIRA FIJAMENTE AL NPC\n\nACCION: EL NPC DA UN MENSAJE DE QUE LE
-        DEJE DE MIRAR (TODO: ANIMACION INCOMODO)\n"},"ID":9,"Name":"Player Stares
-        At The NPC","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[6],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(2110,380)","Comment":"ACCION:
-        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":10,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":7},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-836.6666,207.500015)"},"ID":11,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"TFG.IsPlayerPointingTo","NodeData":{"Offset":"(-131.99469,193.2237)"},"ID":12,"Name":"Is
-        Player Pointing To","Instant":true,"SharedGameObjectListObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":null,"List`1mValue":[8]},"SharedFloatPointingDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":5}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem.Play","NodeData":{"Offset":"(59.09381,191.5086)"},"ID":13,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":9}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(205.941055,194.970932)"},"ID":14,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"OLEEE"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IsGivingTheBack","IsShared":true,"BooleanmValue":false}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(204.057632,54.0919647)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(4.827591,112.861633)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,120)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-154.942352,166.091919)"},"ID":3,"Name":"Player
+        Hands Touch","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_TouchDistance","Stringtype":"SharedFloat","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2}}}],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(193.333344,155)","Comment":"ACCION:
+        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":4,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":1},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IsGivingTheBack","IsShared":true,"BooleanmValue":false}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
         unityObjects:
-        - {fileID: 11400000, guid: 5ca6367757d0858429d76226d4d94635, type: 2}
-        - {fileID: 11400000, guid: 291c2041e0c5d584fb434f6b1f966433, type: 2}
-        - {fileID: 11400000, guid: 197eabc4eaab28443a1c0c156bbaf44f, type: 2}
-        - {fileID: 11400000, guid: 020c30040d13db349b51a343314dc1b8, type: 2}
-        - {fileID: 11400000, guid: 2afbfe7dbf692304da7fcb74a4b07c25, type: 2}
-        - {fileID: 11400000, guid: 67c07a7141ca4564e9bc89335986a975, type: 2}
-        - {fileID: 11400000, guid: c5e8907a4c42b1348af26c152fe217e3, type: 2}
+        - {fileID: 11400000, guid: 8f25c2b3d3b7fd641bdc57a2c6ebaa66, type: 2}
         - {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c, type: 3}
-        - {fileID: 0}
-        - {fileID: 0}
         byteData: 
         byteDataArray: 
       Version: 1.6.4
@@ -5226,12 +5205,12 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7746602170008508207}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 1.69
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.2
   m_Direction: 1
-  m_Center: {x: 0, y: 0.84, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &7762168803147490122
 GameObject:
   m_ObjectHideFlags: 0
