@@ -548,116 +548,120 @@ PrefabInstance:
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.JSONSerialization
-      value: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(504.057617,-95.9080353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-2.205412,103.165031)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(13.5135126,125.585533)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-663.337769,476.826355)","Comment":"EL
-        NPC BUSCA EL OBJETO MAS CERCANO Y SE ACERCA AL JUGADOR PARA DARSELO, SI EL
-        JUGADOR PULSA P, PASA A COGER EL OBJETO"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-983.261353,229.598877)","Comment":"SE
-        COMRPUEBA SI EL PERSONAJE TIENE QUE AYUDAR"},"ID":4,"Name":"Compare Shared
-        Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"TFG.FindNearestIngredient","NodeData":{"Offset":"(-731.1903,248.4594)","Comment":"Encuentra
-        el ingrediente correcto m\u00e1s cercano"},"ID":5,"Name":"Find Nearest Ingredient","Instant":true,"SharedFloatmagnitude":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Seek","NodeData":{"Offset":"(-396.0084,277.573547)","Comment":"Se
-        acerca hacia el ingrediente correcto m\u00e1s cercano"},"ID":6,"Name":"Seek","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(-69.2857056,295)","Comment":"Animaci\u00f3n
-        coger objeto"},"ID":7,"Name":"Play Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":0},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedBoolGoToIdle":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"TFG.PickUpObject","NodeData":{"Offset":"(197.857147,305)"},"ID":8,"Name":"Pick
-        Up Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(554.0348,320.203064)"},"ID":9,"Name":"Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Seek","NodeData":{"Offset":"(-349.1303,290.434753)","Comment":"Se
-        acerca hacia el ingrediente correcto m\u00e1s cercano"},"ID":10,"Name":"Seek","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.RotateTowards","NodeData":{"Offset":"(75.62573,189.418335)"},"ID":11,"Name":"Rotate
-        Towards","Instant":true,"BooleanusePhysics2D":false,"SharedFloatrotationEpsilon":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedFloatmaxLookAtRotationDelta":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolonlyY":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedVector3targetRotation":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.ParallelSelector","NodeData":{"Offset":"(972.9885,267.09906)"},"ID":12,"Name":"Parallel
-        Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(-110,140)"},"ID":13,"Name":"Play
-        Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":1},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}},{"Type":"TFG.LeaveObject","NodeData":{"Offset":"(107.15509,151.265625)","Comment":"EL
-        NPC SUELTA EL OBJETO"},"ID":14,"Name":"Leave Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedGameObjectingredient":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(1262.57117,306.6823)","Comment":"EL
-        NPC YA NO TIENE QUE AYUDAR"},"ID":15,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true}}]},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(440.941833,410.790833)","Comment":"ACCION:
-        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":16,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":2},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1206.23193,-516.4123)"},"ID":17,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"TFG.IsPlayerPointingTo","NodeData":{"Offset":"(-131.99469,193.2237)"},"ID":18,"Name":"Is
-        Player Pointing To","Instant":true,"SharedGameObjectListObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":null,"List`1mValue":[null]},"SharedFloatPointingDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":5}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem.Play","NodeData":{"Offset":"(59.09381,191.5086)"},"ID":19,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(205.941055,194.970932)"},"ID":20,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"OLEEE"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-712.362366,1237.74658)","Comment":"ARBOL
-        PRINCIPAL CON TODAS LAS TAREAS"},"ID":21,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,270)"},"ID":22,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-1225.17822,608.4585)","Comment":"CONDICION:
+      value: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(504.057617,-95.9080353)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-2.205412,103.165031)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-15,126.590935)","Comment":"EL
+        JUGADOR SE QUEDA QUIETO DURANTE MUCHO TIEMPO"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-368.374756,187.605408)"},"ID":3,"Name":"Is
+        Player Quiet","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false}]}]},"DetachedTasks":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-1206.23193,-516.4123)"},"ID":4,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"TFG.IsPlayerPointingTo","NodeData":{"Offset":"(-131.99469,193.2237)"},"ID":5,"Name":"Is
+        Player Pointing To","Instant":true,"SharedGameObjectListObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":null,"List`1mValue":[null]},"SharedFloatPointingDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":5}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityParticleSystem.Play","NodeData":{"Offset":"(59.09381,191.5086)"},"ID":6,"Name":"Play","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(205.941055,194.970932)"},"ID":7,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"OLEEE"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-712.362366,1237.74658)","Comment":"ARBOL
+        PRINCIPAL CON TODAS LAS TAREAS"},"ID":8,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,270)"},"ID":9,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-1225.17822,608.4585)","Comment":"CONDICION:
         EL JUGADOR ESTA DEMASIADO CERCA DEL NPC\n\nACCION: EL NPC SE DA LA VUELTA
-        Y HUYE"},"ID":23,"Name":"Minimum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[3],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-328.478271,1792.17456)"},"ID":24,"Name":"Is
-        frightened from behind","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[4],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(117.272728,785.908936)","Comment":"CONDICION:
+        Y HUYE"},"ID":10,"Name":"Minimum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[1],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-328.478271,1792.17456)"},"ID":11,"Name":"Is
+        frightened from behind","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(117.272728,785.908936)","Comment":"CONDICION:
         EL JUGADOR ESTA MUY CERCA DEL NPC\n\nACCION: EL NPC HACE UNA ANIMACION DE
-        SENTIRSE INCOMODO"},"ID":25,"Name":"Medium distance","Instant":true,"ExternalBehavior[]externalBehaviors":[5],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(785.3811,985.658569)","Comment":"CONDICION:
+        SENTIRSE INCOMODO"},"ID":12,"Name":"Medium distance","Instant":true,"ExternalBehavior[]externalBehaviors":[3],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(785.3811,985.658569)","Comment":"CONDICION:
         EL JUGADOR ESTA DEMASIADO LEJOS DEL NPC SE ACERCA AL PERSONAJE\n\nACCION: 
-        EL NPC SE ACERCA AL PERSONAJE"},"ID":26,"Name":"Maximum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[6],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1393.532,591.904663)","Comment":"CONDICION:
-        EL JUGADOR ESTA AGACHADO\n\nACCION: EL NPC SE AGACHA"},"ID":27,"Name":"Crouching","Instant":true,"ExternalBehavior[]externalBehaviors":[7],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1667.01257,1398.13562)","Comment":"CONDICION:
+        EL NPC SE ACERCA AL PERSONAJE"},"ID":13,"Name":"Maximum distance","Instant":true,"ExternalBehavior[]externalBehaviors":[4],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":"","NamedVariablemValue":{"Stringname":"Head","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1393.532,591.904663)","Comment":"CONDICION:
+        EL JUGADOR ESTA AGACHADO\n\nACCION: EL NPC SE AGACHA"},"ID":14,"Name":"Crouching","Instant":true,"ExternalBehavior[]externalBehaviors":[5],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1667.01257,1398.13562)","Comment":"CONDICION:
         EL JUGADOR ESTA DANDO LA ESPALDA AL NPC\n\nACCION: EL NPC TAMBIEN DA LA ESPALDA
-        AL JUGADOR"},"ID":28,"Name":"Player Gives The Back","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[8],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1739.29163,1674.84155)","Comment":"CONDICION:
+        AL JUGADOR"},"ID":15,"Name":"Player Gives The Back","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[6],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(1739.29163,1674.84155)","Comment":"CONDICION:
         EL JUGADOR MIRA FIJAMENTE AL NPC\n\nACCION: EL NPC DA UN MENSAJE DE QUE LE
-        DEJE DE MIRAR (TODO: ANIMACION INCOMODO)\n"},"ID":29,"Name":"Player Stares
-        At The NPC","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[9],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(2110,380)","Comment":"ACCION:
-        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":30,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":10},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IsGivingTheBack","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IngredientPicked","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true}]}'
+        DEJE DE MIRAR (TODO: ANIMACION INCOMODO)\n"},"ID":16,"Name":"Player Stares
+        At The NPC","Instant":true,"Disabled":true,"ExternalBehavior[]externalBehaviors":[7],"SharedNamedVariable[]variables":[],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(2110,380)","Comment":"ACCION:
+        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":17,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":8},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-1765,305)","Comment":"EL
+        NPC BUSCA EL OBJETO MAS CERCANO Y SE ACERCA AL JUGADOR PARA DARSELO, SI EL
+        JUGADOR PULSA P, PASA A COGER EL OBJETO"},"ID":18,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-663.337769,476.826355)","Comment":"EL
+        NPC BUSCA EL OBJETO MAS CERCANO Y SE ACERCA AL JUGADOR PARA DARSELO, SI EL
+        JUGADOR PULSA P, PASA A COGER EL OBJETO"},"ID":19,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedBool","NodeData":{"Offset":"(-983.261353,229.598877)","Comment":"SE
+        COMRPUEBA SI EL PERSONAJE TIENE QUE AYUDAR"},"ID":20,"Name":"Compare Shared
+        Bool","Instant":true,"SharedBoolvariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true},"SharedBoolcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"TFG.FindNearestIngredient","NodeData":{"Offset":"(-731.1903,248.4594)","Comment":"Encuentra
+        el ingrediente correcto m\u00e1s cercano"},"ID":21,"Name":"Find Nearest Ingredient","Instant":true,"SharedFloatmagnitude":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Seek","NodeData":{"Offset":"(-396.0084,277.573547)","Comment":"Se
+        acerca hacia el ingrediente correcto m\u00e1s cercano"},"ID":22,"Name":"Seek","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(-69.2857056,295)","Comment":"Animaci\u00f3n
+        coger objeto"},"ID":23,"Name":"Play Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":9},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedBoolGoToIdle":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"TFG.PickUpObject","NodeData":{"Offset":"(197.857147,305)"},"ID":24,"Name":"Pick
+        Up Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(554.0348,320.203064)"},"ID":25,"Name":"Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Seek","NodeData":{"Offset":"(-349.1303,290.434753)","Comment":"Se
+        acerca hacia el ingrediente correcto m\u00e1s cercano"},"ID":26,"Name":"Seek","Instant":true,"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedVector3targetPosition":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":3},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":120},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.RotateTowards","NodeData":{"Offset":"(75.62573,189.418335)"},"ID":27,"Name":"Rotate
+        Towards","Instant":true,"BooleanusePhysics2D":false,"SharedFloatrotationEpsilon":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2},"SharedFloatmaxLookAtRotationDelta":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedBoolonlyY":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedVector3targetRotation":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.ParallelSelector","NodeData":{"Offset":"(972.9885,267.09906)"},"ID":28,"Name":"Parallel
+        Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(-110,140)"},"ID":29,"Name":"Play
+        Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":10},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}},{"Type":"TFG.LeaveObject","NodeData":{"Offset":"(107.15509,151.265625)","Comment":"EL
+        NPC SUELTA EL OBJETO"},"ID":30,"Name":"Leave Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedGameObjectingredient":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(1262.57117,306.6823)","Comment":"EL
+        NPC YA NO TIENE QUE AYUDAR"},"ID":31,"Name":"Set Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true}}]},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(440.941833,410.790833)","Comment":"ACCION:
+        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":32,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":11},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}],"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IsGivingTheBack","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Ingredient","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IngredientPicked","IsShared":true,"BooleanmValue":false},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"HasToHelp","IsShared":true,"BooleanmValue":true},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"PlayerPos","IsShared":true,"Vector3mValue":"(0,0,0)"},{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"PlayerRot","IsShared":true,"Vector3mValue":"(0,0,0)"}]}'
       objectReference: {fileID: 0}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[8]
       value: 
-      objectReference: {fileID: 11400000, guid: 67c07a7141ca4564e9bc89335986a975,
-        type: 2}
-    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[0]
-      value: 
-      objectReference: {fileID: -203655887218126122, guid: aca128d05d9e3a249a4d466116fdf764,
-        type: 3}
-    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
-      value: 
-      objectReference: {fileID: -203655887218126122, guid: 8d578265027bf7f4391ac90b3fa7eda0,
-        type: 3}
-    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
-        type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[2]
-      value: 
       objectReference: {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c,
         type: 3}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[3]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 49dbabc3599f9e24ab91b55cf142082c,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: 5ca6367757d0858429d76226d4d94635,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 291c2041e0c5d584fb434f6b1f966433,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[5]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[3]
       value: 
       objectReference: {fileID: 11400000, guid: 197eabc4eaab28443a1c0c156bbaf44f,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[6]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
       value: 
       objectReference: {fileID: 11400000, guid: 020c30040d13db349b51a343314dc1b8,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[5]
       value: 
       objectReference: {fileID: 11400000, guid: 2afbfe7dbf692304da7fcb74a4b07c25,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[9]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 67c07a7141ca4564e9bc89335986a975,
+        type: 2}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[7]
       value: 
       objectReference: {fileID: 11400000, guid: c5e8907a4c42b1348af26c152fe217e3,
         type: 2}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[9]
+      value: 
+      objectReference: {fileID: -203655887218126122, guid: aca128d05d9e3a249a4d466116fdf764,
+        type: 3}
+    - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
+        type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[10]
       value: 
-      objectReference: {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c,
+      objectReference: {fileID: -203655887218126122, guid: 8d578265027bf7f4391ac90b3fa7eda0,
         type: 3}
     - target: {fileID: 7283656340240209579, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[11]
       value: 
-      objectReference: {fileID: 11400000, guid: 2afbfe7dbf692304da7fcb74a4b07c25,
-        type: 2}
+      objectReference: {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c,
+        type: 3}
     - target: {fileID: 7309909104619769265, guid: 67f43e3024effa14fa9d4861db50e145,
         type: 3}
       propertyPath: m_Enabled
