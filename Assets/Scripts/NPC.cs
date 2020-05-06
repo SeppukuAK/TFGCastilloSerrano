@@ -22,6 +22,8 @@ namespace TFG
 
         public float StandardPlayerHeight { get; set; }
 
+        public GameObject Hand; //Mano del NPC
+
         private void Awake()
         {
 
