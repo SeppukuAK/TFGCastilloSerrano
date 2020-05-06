@@ -14,6 +14,7 @@ namespace TFG
     {
         public SharedGameObject targetObject;//Camara
         public SharedGameObject ingredient;//Ingrediente
+
         private Rigidbody rb;
         private bool picked;
 
@@ -22,17 +23,15 @@ namespace TFG
             picked = false;
 
             //Obtengo el Rigidbody del ingrediente
-            rb = ingredient.Value.GetComponent<Rigidbody>();
-
-            //Unimos la posicion del objeto a la posicion de la mano         
-            // ingredient.Value.transform.parent = null;
-
-
+            rb = ingredient.Value.GetComponent<Rigidbody>(); // ?? No se sabe si es necesario
         }
 
         public void DetachIngredient()
         {
             //ESTO ES PARA SIMULAR
+            //Unimos la posicion del objeto a la posicion de la mano         
+            // ingredient.Value.transform.parent = null;
+
 
             //Unimos la posicion del objeto a la posicion de la cámara        
             ingredient.Value.transform.SetParent(targetObject.Value.transform, true);
@@ -40,7 +39,6 @@ namespace TFG
             //Se resetean la posicion y la rotación del ingrediente 
             ingredient.Value.transform.localPosition = new Vector3(0.0f, 0.0f, 2.0f);
             ingredient.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
-           // rb.isKinematic = false;
         }
 
         public override TaskStatus OnUpdate()
