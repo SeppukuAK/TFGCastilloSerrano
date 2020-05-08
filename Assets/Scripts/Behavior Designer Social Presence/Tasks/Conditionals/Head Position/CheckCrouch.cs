@@ -26,7 +26,7 @@ namespace TFG
             targetTransform = targetObject.Value.transform;//Se obtiene el componente Transform del jugador
 
             //Se obtiene la altura inicial de la cabeza
-            defaultHeight = GetComponent<NPC>().StandardPlayerHeight;
+            defaultHeight = GetComponent<SP_NPC>().PlayerHeight;
             Debug.Log(defaultHeight);
             crouchHeight = defaultHeight - (crouchHeightPercentage.Value * defaultHeight / 100);
         }

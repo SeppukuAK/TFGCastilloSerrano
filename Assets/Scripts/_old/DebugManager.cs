@@ -14,7 +14,7 @@ namespace TFG
     {
         public XRRig XRRig;
         public PlayerMovement PlayerSimulatorPrefab;
-        public NPC NPC;
+        public SP_NPC NPC;
 
         private Vector3 XRRigPosition;
         private Quaternion XRRigRotation;
@@ -48,7 +48,7 @@ namespace TFG
             NPC.GetComponent<BehaviorTree>().SetVariable("Head", head);
 
             //Se obtiene la altura inicial de la cabeza
-            NPC.StandardPlayerHeight = head.Value.transform.position.y;
+            NPC.PlayerHeight = head.Value.transform.position.y;
             Destroy(this.gameObject);
         }
 

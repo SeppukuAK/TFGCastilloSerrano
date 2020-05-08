@@ -1,4 +1,5 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
+using FrameSynthesis.VR;
 
 namespace TFG
 {
@@ -6,6 +7,13 @@ namespace TFG
     [TaskCategory("TFG")]
     public class CheckNod : Conditional
     {
+        private bool nodding = false;
+
+        public override void OnStart()
+        {
+            base.OnStart();
+        }
+
         public override TaskStatus OnUpdate()
         {
             if (HeadGestureManager.Instance.Nodding)

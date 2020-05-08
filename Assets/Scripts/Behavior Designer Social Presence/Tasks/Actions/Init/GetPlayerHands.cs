@@ -4,10 +4,6 @@ using UnityEngine;
 
 namespace TFG
 {
-    /// <summary>
-    /// TODO: SER ELIMINADO
-    /// TODO: Eliminar debug
-    /// </summary>
     [TaskDescription("Obtiene las 2 manos del jugador")]
     [TaskCategory("TFG")]
     public class GetPlayerHands : Action

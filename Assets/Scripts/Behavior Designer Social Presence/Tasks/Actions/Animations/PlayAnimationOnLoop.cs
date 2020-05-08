@@ -1,13 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using UnityEditor;
 using UnityEditor.Animations;
 
 namespace TFG
 {
+    /// <summary>
+    /// TODO: Puede estar más comentado el método de CreateAnimatorTransition(), tambien de no Loop
+    /// TODO: Clase padre de ambos PlayAnimation
+    /// </summary>
     [TaskDescription("Reproduce la animación en bucle")]
     [TaskCategory("TFG")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
@@ -19,22 +20,40 @@ namespace TFG
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The duration of the transition between the previous animation and this animation")]
         public SharedFloat TransitionDuration;
 
+        /// <summary>
+        /// Referencia al animator del NPC
+        /// </summary>
         private Animator animator;
-        private string triggerName;//Name of the trigger
 
+        /// <summary>
+        /// Nombre del trigger de esta transición
+        /// </summary>
+        private string triggerName;    
+
+        /// <summary>
+        /// Crea la transición
+        /// </summary>
         public override void OnAwake()
         {
             animator = GetComponent<Animator>();
+            CreateAnimatorTransition();
+        }
+
+        /// <summary>
+        /// Crea el estado en la máquina de estados y su transición
+        /// </summary>
+        private void CreateAnimatorTransition()
+        {
             triggerName = AnimationClip.Value.name + "Trigger";
 
             //Creación de los parámetros y la transición
-            AnimatorController controller = GetComponent<NPC>().AnimatorController;
-           
+            AnimatorController controller = GetComponent<SP_NPC>().AnimatorController;
+
             controller.AddParameter(triggerName, AnimatorControllerParameterType.Trigger);
 
-            //maquina de estados
+            //Maquina de estados
             var rootStateMachine = controller.layers[0].stateMachine;
-         
+
             var newState = rootStateMachine.AddState(AnimationClip.Value.name);
 
             newState.motion = AnimationClip.Value;
@@ -44,11 +63,18 @@ namespace TFG
             resetTransition.duration = TransitionDuration.Value;
         }
 
+        /// <summary>
+        /// Reproduce la animación.
+        /// </summary>
         public override void OnStart()
         {
-            GetComponent<Animator>().SetTrigger(triggerName);//play
+            animator.SetTrigger(triggerName);   //play
         }
 
+        /// <summary>
+        /// Devuelve running continuamente. Esta tarea tiene que ser interrumpida para acabar
+        /// </summary>
+        /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
             return TaskStatus.Running;
