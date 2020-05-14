@@ -68,11 +68,12 @@ namespace SocialPresenceVR
             //Se comprueba si hay colisión
             if (Physics.Raycast(player.position + leftOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value) || Physics.Raycast(player.position + rightOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value))
             {
+                Debug.Log(hit.collider.name);
                 //Recorrido de cada uno de los objetos asociados
                 foreach (GameObject item in Objects.Value)
                 {
                     Collider[] colliders = item.GetComponentsInChildren<Collider>();
-
+                  
                     //Recorrido de todos los posibles colliders del objeto
                     foreach (Collider collider in colliders)
                     {
