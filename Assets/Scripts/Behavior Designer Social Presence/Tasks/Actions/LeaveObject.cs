@@ -1,49 +1,53 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using UnityEditor;
 
 namespace TFG
 {
-    [TaskDescription("Suelta el objeto")]
+    [TaskDescription("El NPC Suelta el ingrediente que sostiene en la mano")]
     [TaskCategory("TFG")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class LeaveObject : Action
     {
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto que representa al jugador")]
         public SharedGameObject targetObject;//Camara
+
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto que representa el ingrediente a soltar")]
         public SharedGameObject ingredient;//Ingrediente
 
-        private Rigidbody rb;
-        private bool picked;
+        private Rigidbody rb;//Rigidbody del ingrediente
+        private bool picked;//Booleana para comprobar que el jugador ha cogido el ingrediente (Simulación)
 
         public override void OnStart()
         {
             picked = false;
 
-            //Obtengo el Rigidbody del ingrediente
-            rb = ingredient.Value.GetComponent<Rigidbody>(); // ?? No se sabe si es necesario
+            //Se obtiene el Rigidbody del ingrediente
+            //TODO: No se sabe si es necesario, puede que se haga internamente en el codigo de coger objeto con vr
+            rb = ingredient.Value.GetComponent<Rigidbody>(); 
         }
 
+        //Método encargado de desligar el ingrediente que sostiene el NPC en la mano
         public void DetachIngredient()
         {
-            //ESTO ES PARA SIMULAR
-            //Unimos la posicion del objeto a la posicion de la mano         
+            //*****TODO: ESTO ES PARA SIMULAR*****
+            // El ingrediente ya no está atado a la mano del NPC         
             // ingredient.Value.transform.parent = null;
 
-
-            //Unimos la posicion del objeto a la posicion de la cámara        
+            //Se une la posicion del objeto a la posicion de la cámara(jugador)        
             ingredient.Value.transform.SetParent(targetObject.Value.transform, true);
 
-            //Se resetean la posicion y la rotación del ingrediente 
+            //Se resetean la posicion y la rotación del ingrediente para que estén delante del jugador
             ingredient.Value.transform.localPosition = new Vector3(0.0f, 0.0f, 2.0f);
             ingredient.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
+            //*****TODO: ESTO ES PARA SIMULAR*****
+
         }
 
         public override TaskStatus OnUpdate()
         {
-            //ESTO ES PARA SIMULAR QUE SE COGE EL INGREDIENTE
+            //*****TODO: ESTO ES PARA SIMULAR*****
+            //ESTO ES PARA SIMULAR QUE EL JUGADOR COGE EL INGREDIENTE CON LA TECLA P
             if (Input.GetKeyDown(KeyCode.P))
             {
                 picked = !picked;
@@ -54,6 +58,8 @@ namespace TFG
             }
             else
                 return TaskStatus.Running;
+            //*****TODO: ESTO ES PARA SIMULAR*****
+
 
         }
     }

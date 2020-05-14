@@ -7,37 +7,40 @@ using UnityEditor;
 
 namespace TFG
 {
-    [TaskDescription("Obtiene el ingrediente correcto más cercano")]
+    [TaskDescription("Obtiene el ingrediente que forma parte de la misión más cercano")]
     [TaskCategory("TFG")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
-    public class FindNearestIngredient : Conditional
+    public class FindNearestIngredient : Action
     {
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The distance that the object needs to be within")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Distancia a la que se tiene que encontrar el ingrediente para ser detectado")]
         public SharedFloat magnitude = 5;
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The object variable that will be set when a object is found what the object is")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Ingrediente encontrado más cercano")]
         public SharedGameObject returnedObject;
 
-        private List<GameObject> objects;
-        // distance * distance, optimization so we don't have to take the square root
+        private List<GameObject> objects;//Lista de ingredientes
+
+        //Variables para la detección de si un objeto está a la distancia establecida
         private float sqrMagnitude;
         private bool overlapCast = false;
 
-        private CauldronContent cauldronContent;//Objeto de la clase CauldronContent
-        private GameObject cauldronAux;//TODO:quitar
+        private CauldronContent cauldronContent;//Objeto de la clase CauldronContent necesario para obtener los objetos que se encuentran en el caldero
 
         public override void OnAwake()
         {
-            //MAL SEGURAMENTE
             var cauldronObject = Object.FindObjectOfType<CauldronContent>();
             cauldronContent = cauldronObject.GetComponent<CauldronContent>();
         }
 
-        //Método que comprueba si un objeto está ya en la lista de objetos que están en el caldero
+        /// <summary>
+        /// Método que comprueba si un objeto está en el caldero
+        /// </summary>
+        /// <param name="ingredientType"></param>
+        /// <returns></returns>
         bool IsThisIngredientIn(string ingredientType)
         {
             List<string> aux = new List<string>(cauldronContent.GetCurrentIngredientsIn());
 
-            //Comprobamos si está en la lista
+            //Comprobamos si el ingrediente está en la lista de objetos que están en el caldero
             if (aux.Contains(ingredientType))
                 return true;
             else
@@ -56,28 +59,30 @@ namespace TFG
             else           
                 objects = new List<GameObject>();
             
-            //Se obtienen todos los objetos que tienen el componente de ingrediente AWAKE?
+            //Se obtienen todos los objetos que tienen el componente de ingrediente
             var gameObjects = Object.FindObjectsOfType<CauldronIngredient>();
-
 
             for (int i = 0; i < gameObjects.Length; ++i)
             {
-                //Variable auxiliar
+                //Variable auxiliar para obtener un ingrediente
                 var cauldronIngredient = gameObjects[i].GetComponent<CauldronIngredient>();
 
-                //Añadimos solamente los objetos que no están aún en el caldero y que forman parte de la misión
+                //Añadimos solamente los objetos que no están aún en el caldero y que forman parte de la misión(pluma, calabaza y filete)
                 if (!IsThisIngredientIn(cauldronIngredient.IngredientType) && (cauldronIngredient.IngredientType == "feather" || cauldronIngredient.IngredientType == "pumpkin" || cauldronIngredient.IngredientType == "meat"))
                     objects.Add(gameObjects[i].gameObject);
             }
-
         }
 
-        // returns success if any object is within distance of the current object. Otherwise it will return failure
+        /// <summary>
+        /// Método que devuelve éxito si cualquier objeto de la lista está a distancia establecida
+        /// </summary>
+        /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
             if (transform == null || objects == null)
                 return TaskStatus.Failure;
 
+            //Se añaden a la lista los objetos que están a distancia
             if (overlapCast)
             {
                 objects.Clear();
@@ -90,28 +95,29 @@ namespace TFG
             }
 
             Vector3 direction;
-            // check each object. All it takes is one object to be able to return success
+
+            // Se recorren todos los objetos, se devuelve éxito cuando se ha encontrado el más cercano 
             for (int i = 0; i < objects.Count; ++i)
             {
-                if (objects[i] == null)
-                {
+                if (objects[i] == null)                
                     continue;
-                }
+                
                 direction = objects[i].transform.position - (transform.position);
-                // check to see if the square magnitude is less than what is specified
+
+                // Se encuentra el objeto más cercano
                 if (Vector3.SqrMagnitude(direction) < sqrMagnitude)
                 {
-                    // the object has a magnitude less than the specified magnitude. Set the object and return success
                     returnedObject.Value = objects[i];
-                    Debug.Log("Objeto encontrado: " + objects[i].name);
                     return TaskStatus.Success;
                 }
             }
-            // no objects are within distance. Return failure
+            // Si no hay objetos en la distancia establecida, se devuelve fallo
             return TaskStatus.Failure;
         }
 
-        // Draw the seeing radius
+        /// <summary>
+        /// Método de dibujado para representar la distancia establecida
+        /// </summary>
         public override void OnDrawGizmos()
         {
 #if UNITY_EDITOR

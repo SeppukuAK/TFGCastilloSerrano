@@ -13,16 +13,14 @@ namespace TFG
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PlayAnimation : Action
     {
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The animation we want to play")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Animación que se quiere reproducir")]
         public SharedAnimationClip AnimationClip;
 
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The duration of the transition between the previous animation and this animation")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Duración de la transición entre la animación anterior y la actual")]
         public SharedFloat TransitionDuration;
 
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("Boolean to set the animation to idle after this anim ends")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Booleana para establecerla animación al estado idle después de reproducir esta animación")]
         public SharedBool GoToIdle;
-
-
 
         private float AnimDuration;//Duración de la animación
 

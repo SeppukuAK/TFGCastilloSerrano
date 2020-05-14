@@ -1,37 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using UnityEditor;
 
 namespace TFG
 {
-    [TaskDescription("Coge el objeto")]
+    [TaskDescription("El NPC coge un ingrediente")]
     [TaskCategory("TFG")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PickUpObject : Action
     {
-        public SharedGameObject targetObject;
-        private GameObject hand;
-        private Rigidbody rb;
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Ingrediente que se ha cogido")]
+        public SharedGameObject Ingredient;
+
+        private GameObject hand;//Mano del NPC
+        private Rigidbody rb;//Rigidbody del ingrediente
 
         public override void OnAwake()
         {
-            //Obtengo la mano del NPC
+            //Se obtiene la mano del NPC
             hand = GetComponent<NPC>().Hand;
         }
         public override void OnStart()
         {
-            //Obtengo el Rigidbody del ingrediente
-            rb = targetObject.Value.GetComponent<Rigidbody>();
+            //Se obtiene el Rigidbody del ingrediente
+            rb = Ingredient.Value.GetComponent<Rigidbody>();
 
-            //Unimos la posicion del objeto a la posicion de la mano         
-            targetObject.Value.transform.SetParent(hand.transform, true);
+            //Se une la posicion del objeto a la posicion de la mano         
+            Ingredient.Value.transform.SetParent(hand.transform, true);
 
             //Se resetean la posicion y la rotación del ingrediente 
-            targetObject.Value.transform.localPosition = new Vector3(0, 0, 0);
-            targetObject.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
+            Ingredient.Value.transform.localPosition = new Vector3(0, 0, 0);
+            Ingredient.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
+
+            //El ingrediente deja de responder a la física
             rb.isKinematic = true;
         }
 
