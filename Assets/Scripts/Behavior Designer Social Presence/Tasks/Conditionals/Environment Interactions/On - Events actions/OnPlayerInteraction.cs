@@ -1,14 +1,17 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
+using UnityEngine;
 
 namespace TFG
 {
     /// <summary>
     /// Clase base usada para escuchar los eventos de interacción con un objeto
+    /// TODO: Puede que haya problemas en el futuro con interacion= true, no lo tengo claro
     /// </summary>
     public abstract class OnPlayerInteraction : Conditional
     {
-        [Tooltip("Objeto con el que se interactúa")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto con el que se interactúa")]
         public SharedXRInteractable XRInteractable;
 
         private bool interaction;
@@ -34,9 +37,23 @@ namespace TFG
         /// <param name="arg0"></param>
         protected void OnInteraction(XRBaseInteractor arg0)
         {
-            interaction = true;
+            StartCoroutine(InteractionRoutine());
         }
 
+        /// <summary>
+        /// Establece la interacción con el objeto solo en este frame
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerator InteractionRoutine()
+        {
+            interaction = true;
+            yield return new WaitForEndOfFrame();
+            interaction = false;
+        }
+
+        /// <summary>
+        /// Cuando ha devuelto success, establece interaction a false
+        /// </summary>
         public override void OnEnd()
         {
             interaction = false;

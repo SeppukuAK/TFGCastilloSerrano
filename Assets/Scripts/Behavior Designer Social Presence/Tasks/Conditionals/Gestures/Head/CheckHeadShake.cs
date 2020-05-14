@@ -1,5 +1,4 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
-using FrameSynthesis.VR;
 
 namespace TFG
 {
@@ -7,11 +6,6 @@ namespace TFG
     [TaskCategory("TFG")]
     public class CheckHeadShake : Conditional
     {
-        public override void OnStart()
-        {
-            base.OnStart();
-        }
-
         public override TaskStatus OnUpdate()
         {
             if (HeadGestureManager.Instance.HeadShaking)

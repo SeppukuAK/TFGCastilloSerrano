@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mBehaviorSource:
     behaviorName: Behavior
-    behaviorDescription: "Cuando el jugador est\xE1 se\xF1alando la mano, se hace
-      Debug.Log"
+    behaviorDescription: "Cuando el jugador est\xE1 se\xF1alando con la mano, se
+      hace Debug.Log"
     mTaskData:
       types: []
       parentIndex: 

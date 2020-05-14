@@ -14,6 +14,9 @@ namespace TFG
     [TaskCategory("TFG")]
     public class Init_SP_NPC : Action
     {
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Altura del jugador en metros")]
+        public SharedFloat PlayerHeight;
+
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Mano principal del NPC con la que agarra objetos")]
         public SharedGameObject Hand;
 
@@ -44,7 +47,7 @@ namespace TFG
                 var newState = rootStateMachine.AddState("Entry State");
 
                 _SP_NPC.AnimatorController = animatorController;
-                _SP_NPC.PlayerHeight = Camera.main.transform.position.y;
+                _SP_NPC.PlayerHeight = PlayerHeight.Value;
                 _SP_NPC.Hand = Hand.Value;
                 _SP_NPC.AnimatorControllerPath = animatorControllerPath;
             }

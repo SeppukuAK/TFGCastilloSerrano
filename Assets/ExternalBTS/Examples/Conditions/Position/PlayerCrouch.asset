@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: PlayerCrouch
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: "Hace Debug.Log cuando el jugador est\xE1 agachado"
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-212.599945,242.4997)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-2.599945,122.499695)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"TFG.CheckCrouch","NodeData":{"Offset":"(-118.286346,179.3133)"},"ID":2,"Name":"Check
+        Crouch","Instant":true,"SharedIntcrouchHeightPercentage":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"_CrouchHeightPercentage","IsShared":true,"Int32mValue":0}},{"Type":"BehaviorDesigner.Runtime.Tasks.Log","NodeData":{"Offset":"(50.0722961,182.898315)"},"ID":3,"Name":"Log","Instant":true,"SharedStringtext":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"PLAYER
+        CROUCHING!"},"SharedBoollogError":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false}},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(261.485046,166.738632)"},"ID":4,"Name":"Play
+        Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":0},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"_CrouchHeightPercentage","IsShared":true,"Int32mValue":0}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: -203655887218126122, guid: 5041c8e3a8ccc514ba477f910eacf0c2, type: 3}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.4

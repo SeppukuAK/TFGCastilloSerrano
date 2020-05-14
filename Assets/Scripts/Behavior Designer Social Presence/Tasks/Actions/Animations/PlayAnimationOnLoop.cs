@@ -44,6 +44,9 @@ namespace TFG
         /// </summary>
         private void CreateAnimatorTransition()
         {
+            if (!AnimationClip.Value.isLooping)
+                Debug.LogError("Animación asociada a un playAnimationOnLoop sin LoopTime marcado: " + AnimationClip.Value.name);
+
             triggerName = AnimationClip.Value.name + "Trigger";
 
             //Creación de los parámetros y la transición
