@@ -5008,12 +5008,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6762766691609240892}
-  - component: {fileID: 3697507761897261126}
   - component: {fileID: 1774586166563541498}
   - component: {fileID: 6941139900125032913}
   - component: {fileID: 6932549140718381771}
-  - component: {fileID: 380377350359500633}
-  - component: {fileID: 380377349210915781}
   - component: {fileID: 380377349973709141}
   m_Layer: 0
   m_Name: NPCRaul
@@ -5062,25 +5059,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!95 &3697507761897261126
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746602170008508207}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: f8af0573aab879f4c9cd410a4e0a39f9, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1774586166563541498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5116,7 +5094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWhenEnabled: 0
+  startWhenEnabled: 1
   asynchronousLoad: 0
   pauseWhenDisabled: 0
   restartWhenComplete: 0
@@ -5132,16 +5110,19 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(204.057632,54.0919647)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(4.827591,112.861633)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,120)"},"ID":2,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-154.942352,166.091919)"},"ID":3,"Name":"Player
-        Hands Touch","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_TouchDistance","Stringtype":"SharedFloat","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.2}}}],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(193.333344,155)","Comment":"ACCION:
-        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":4,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":1},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Time","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"DeltaTime","IsShared":true,"SinglemValue":0},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"IsGivingTheBack","IsShared":true,"BooleanmValue":false}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(204.057632,54.0919647)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-5.89283371,122.363945)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-132.445816,143.462387)"},"ID":2,"Name":"Init
+        Social Presence NPC","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_Hand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead_","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand_","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand_","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_PlayerHeight","Stringtype":"SharedFloat","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1.7}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(122.499969,130)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":"","Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(0,120)"},"ID":4,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-78.16461,186.9489)"},"ID":5,"Name":"Behavior
+        Tree Reference","Instant":true,"ExternalBehavior[]externalBehaviors":[1],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"_FollowAnimation","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":2}}}],"Booleancollapsed":false},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(256.296326,155)","Comment":"ACCION:
+        IDLE. NO HACER NADA (ANIM IDLE)"},"ID":6,"Name":"Play Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":3},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
         startIndex: 
         dataPosition: 
         unityObjects:
-        - {fileID: 11400000, guid: 8f25c2b3d3b7fd641bdc57a2c6ebaa66, type: 2}
+        - {fileID: 11400000, guid: d0c3a0df3d45c034a964255f6137f297, type: 2}
+        - {fileID: 11400000, guid: df66ebfaf63e164409e186368d246ace, type: 2}
+        - {fileID: 7400000, guid: 6fd7082454b5e8f4eaef795e9a384dfa, type: 2}
         - {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c, type: 3}
         byteData: 
         byteDataArray: 
@@ -5170,33 +5151,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &380377350359500633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746602170008508207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 351c31aaddc2ddc41ad77b98d012512f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DefaultAnimation: {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c,
-    type: 3}
-  defaultTriggerName: 
---- !u!114 &380377349210915781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746602170008508207}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd542377207fe374c97a75639e6b86a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &380377349973709141
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -2,29 +2,46 @@
 using UnityEngine;
 using FrameSynthesis.VR;
 
+/// <summary>
+/// Manager de la detección de gestos con la cabeza
+/// </summary>
 public class HeadGestureManager : MonoBehaviour
 {
     public static HeadGestureManager Instance { get; private set; }
 
     /// <summary>
-    /// Segundos desde que se detecta el cabeceo hasta que deja de considerarse cabeceo
+    /// Segundos desde que se detecta el cabeceo hasta que deja de considerarse cabeceo.
     /// </summary>
     public float NodDuration;
 
     /// <summary>
-    /// Segundos desde que se detecta la sacudida hasta que deja de considerarse sacudida
+    /// Segundos desde que se detecta la sacudida hasta que deja de considerarse sacudida.
     /// </summary>
     public float HeadShakeDuration;
 
+    /// <summary>
+    /// Devuelve si está actualmente cabeceando. (SI)
+    /// </summary>
     public bool Nodding { get; private set; }
+
+    /// <summary>
+    /// Devuelve si está actualmente sacudiendo la cabeza. (NO)
+    /// </summary>
     public bool HeadShaking { get; private set; }
 
+    /// <summary>
+    /// Singleton.
+    /// </summary>
     private void Awake()
     {
         Instance = this;
     }
 
-    void Start()
+    /// <summary>
+    /// Inicializa variables.
+    /// Suscripción a eventos.
+    /// </summary>
+    private void Start()
     {
         Nodding = false;
         HeadShaking = false;
@@ -33,24 +50,38 @@ public class HeadGestureManager : MonoBehaviour
         VRGestureRecognizer.Current.HeadshakeHandler += OnHeadshake;
     }
 
+    /// <summary>
+    /// Evento producido cuando se detecta un (SI)
+    /// </summary>
     private void OnNod()
     {
         StartCoroutine(NodRoutine());
     }
 
-    private void OnHeadshake()
-    {
-        StartCoroutine(HeadshakeRoutine());
-    }
-
-    IEnumerator NodRoutine()
+    /// <summary>
+    /// Rutina que maneja la detección del (SI)
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator NodRoutine()
     {
         Nodding = true;
         yield return new WaitForSeconds(NodDuration);
         Nodding = false;
     }
 
-    IEnumerator HeadshakeRoutine()
+    /// <summary>
+    /// Evento producido cuando se detecta un (NO)
+    /// </summary>
+    private void OnHeadshake()
+    {
+        StartCoroutine(HeadshakeRoutine());
+    }
+
+    /// <summary>
+    /// Rutina que maneja la detección del (NO)
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator HeadshakeRoutine()
     {
         HeadShaking = true;
         yield return new WaitForSeconds(NodDuration);

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: Medium distance
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Proxemical
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-143.140228,-0.00936889648)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(5,305)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"Both","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.CanSeeObject","NodeData":{"Offset":"(-492.91272,303.626953)","Comment":"Distancia
+        a la que el NPC se hace un gesto de incomodidad si el NPC le ve"},"ID":2,"Name":"Can
+        See Object","Instant":true,"BooleanusePhysics2D":false,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true},"SharedGameObjectListtargetObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":null,"List`1mValue":[]},"SharedStringtargetTag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":""},"LayerMaskobjectLayerMask":0,"Int32maxCollisionCount":200,"LayerMaskignoreLayerMask":4,"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":2},"SharedVector3offset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedVector3targetOffset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedFloatangleOffset2D":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0},"SharedBooluseTargetBone":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"HumanBodyBonestargetBone":"Hips","SharedBooldisableAgentColliderLayer":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}},{"Type":"TFG.PlayAnimation","NodeData":{"Offset":"(-9.999985,540)"},"ID":3,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":0},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.1}},{"Type":"TFG.PlayAnimationOnLoop","NodeData":{"Offset":"(455.1931,328.8794)"},"ID":4,"Name":"Play
+        Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"TFG.SharedAnimationClip","Name":null,"AnimationClipmValue":1},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Head","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: -203655887218126122, guid: 96776dbf53a2d3c48aa89fe39c6320e6, type: 3}
+        - {fileID: 7400000, guid: 6b64f85c5ee58984a8e4d87ffdce9b5d, type: 2}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.4

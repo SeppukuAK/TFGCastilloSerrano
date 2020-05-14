@@ -17,8 +17,8 @@ namespace TFG
 
         public override void OnAwake()
         {
-            //Se obtiene la mano del NPC
-            hand = GetComponent<NPC>().Hand;
+            //Obtengo la mano del NPC
+            hand = GetComponent<SP_NPC>().Hand;
         }
         public override void OnStart()
         {
