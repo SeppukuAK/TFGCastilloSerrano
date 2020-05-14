@@ -2,7 +2,7 @@
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Componente dedicado a controlar el estado de la mano

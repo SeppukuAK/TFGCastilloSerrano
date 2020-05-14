@@ -3,14 +3,14 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor.Animations;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// TODO: Puede estar más comentado el método de CreateAnimatorTransition(), tambien de no Loop
     /// TODO: Clase padre de ambos PlayAnimation
     /// </summary>
     [TaskDescription("Reproduce la animación en bucle")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Animations")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PlayAnimationOnLoop : Action
     {

@@ -4,10 +4,10 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor.Animations;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Reproduce la animación")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Animations")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PlayAnimation : Action
     {
@@ -17,17 +17,10 @@ namespace TFG
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Duración de la transición entre la animación anterior y la actual")]
         public SharedFloat TransitionDuration;
 
-<<<<<<< HEAD:Assets/Scripts/Behavior Designer Social Presence/Tasks/Actions/PlayAnimation.cs
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("Booleana para establecerla animación al estado idle después de reproducir esta animación")]
-        public SharedBool GoToIdle;
-
-        private float AnimDuration;//Duración de la animación
-=======
         /// <summary>
         /// Duración total de la animación
         /// </summary>
         private float animDuration;
->>>>>>> master:Assets/Scripts/Behavior Designer Social Presence/Tasks/Actions/Animations/PlayAnimation.cs
 
         /// <summary>
         /// Referencia al animator del NPC

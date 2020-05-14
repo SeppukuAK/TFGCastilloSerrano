@@ -1,5 +1,5 @@
 ﻿
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Enum con los posibles estados de animación de la mano

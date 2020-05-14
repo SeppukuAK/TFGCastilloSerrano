@@ -2,14 +2,14 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Comprueba si el jugador se ha agachado")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/PlayerPosition")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}SeekIcon.png")]
-    public class CheckCrouch : Conditional
+    public class IsPlayerCrouching : Conditional
     {
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The crouch height we want to detect")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Porcentaje de altura a la que se quiere detectar si está agachado el jugador")]
         public SharedInt crouchHeightPercentage;    //Porcentaje de agachamiento al que se quiere detectar si el jugador está agachado
 
         /// <summary>
@@ -36,9 +36,14 @@ namespace TFG
         /// </summary>
         public override void OnStart()
         {
+            //En base al porcentaje, se halla la altura a la que se quiere detectar si el jugador está agachado
             crouchHeight = playerHeight - (crouchHeightPercentage.Value * playerHeight / 100);
         }
 
+        /// <summary>
+        /// Método que comprueba si el jugador está agachado, en cuyo caso se devuelve éxito
+        /// </summary>
+        /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
             //Se obtiene el transform del jugador

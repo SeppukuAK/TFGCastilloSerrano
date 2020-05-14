@@ -2,10 +2,10 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Obtiene la cabeza del jugador")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Init")]
     public class GetPlayerHead : Action
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Cabeza del jugador")]

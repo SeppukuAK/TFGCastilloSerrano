@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador ha usado un objeto")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/EventActions")]
     public class OnPlayerActivateInteractable : OnPlayerInteraction
     {
         protected override void AddListener()

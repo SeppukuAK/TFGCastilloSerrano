@@ -3,7 +3,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using System.Collections;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Clase base usada para escuchar los eventos de interacción con un objeto

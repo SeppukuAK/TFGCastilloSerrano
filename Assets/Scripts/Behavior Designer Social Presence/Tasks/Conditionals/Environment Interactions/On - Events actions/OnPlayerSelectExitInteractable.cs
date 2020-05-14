@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador ha soltado un objeto o se ha teletransportado al objeto")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/EventActions")]
     public class OnPlayerSelectExitInteractable : OnPlayerInteraction
     {
         protected override void AddListener()

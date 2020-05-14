@@ -3,7 +3,7 @@ using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 using BehaviorDesigner.Runtime;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Configura la escena para Debug. 

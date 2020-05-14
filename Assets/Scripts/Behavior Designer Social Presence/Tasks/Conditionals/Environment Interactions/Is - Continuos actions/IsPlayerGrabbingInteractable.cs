@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador está agarrando el objeto especificado")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/ContinuousActions")]
     public class IsPlayerGrabbingInteractable : IsPlayerInteracting
     {
         protected override void AddOnListener()

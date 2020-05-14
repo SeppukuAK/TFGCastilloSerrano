@@ -2,10 +2,10 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Obtiene las 2 manos del jugador")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Init")]
     public class GetPlayerHands : Action
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Mano izquierda")]

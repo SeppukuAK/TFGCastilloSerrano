@@ -1,7 +1,7 @@
 ﻿using BehaviorDesigner.Runtime;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [System.Serializable]
     public class SharedXRInteractable : SharedVariable<XRBaseInteractable>

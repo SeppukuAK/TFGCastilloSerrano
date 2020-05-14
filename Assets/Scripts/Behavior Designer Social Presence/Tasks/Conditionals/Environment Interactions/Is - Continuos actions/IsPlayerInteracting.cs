@@ -1,7 +1,7 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Clase base usada para escuchar los eventos de interacción con un objeto

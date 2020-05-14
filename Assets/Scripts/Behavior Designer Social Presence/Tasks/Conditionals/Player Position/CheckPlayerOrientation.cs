@@ -3,10 +3,10 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Comprueba si el jugador tiene en su campo de visión al NPC")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/PlayerPosition")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}SeekIcon.png")]
     public class CheckPlayerOrientation : Conditional
     {

@@ -5,10 +5,10 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("El jugador esta quieto")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/PlayerPosition")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class IsPlayerQuiet : Conditional
     {

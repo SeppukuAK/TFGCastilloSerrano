@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador está negando con la cabeza")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Gestures/Head")]
     public class CheckHeadShake : Conditional
     {
         public override TaskStatus OnUpdate()

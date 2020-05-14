@@ -2,10 +2,10 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("El NPC Suelta el ingrediente que sostiene en la mano")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/ObjectInteraction")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class LeaveObject : Action
     {

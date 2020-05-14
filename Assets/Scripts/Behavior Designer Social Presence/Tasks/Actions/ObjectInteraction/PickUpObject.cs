@@ -2,10 +2,10 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("El NPC coge un ingrediente")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/ObjectInteraction")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PickUpObject : Action
     {

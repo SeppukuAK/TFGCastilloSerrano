@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Componente encargado de gestionar el reconocimiento de gestos con la mano derecha

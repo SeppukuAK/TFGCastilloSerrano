@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEditor.Animations;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// Controlador de un NPC con Presencia Social

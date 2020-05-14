@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [System.Serializable]
     public class SharedAnimationClip : SharedVariable<AnimationClip>

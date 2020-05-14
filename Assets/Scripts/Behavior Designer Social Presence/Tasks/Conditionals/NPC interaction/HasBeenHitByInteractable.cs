@@ -2,10 +2,10 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el NPC ha sido golpeado por un objeto interactuable")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/NPCInteraction")]
     public class HasBeenHitByInteractable : Conditional
     {
         private bool enteredCollision = false;

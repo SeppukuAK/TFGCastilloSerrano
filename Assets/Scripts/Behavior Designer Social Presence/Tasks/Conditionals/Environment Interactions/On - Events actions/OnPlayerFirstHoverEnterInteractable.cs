@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador apunta a un objeto con el laser")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/EventActions")]
     public class OnPlayerFirstHoverEnterInteractable : OnPlayerInteraction
     {
         protected override void AddListener()

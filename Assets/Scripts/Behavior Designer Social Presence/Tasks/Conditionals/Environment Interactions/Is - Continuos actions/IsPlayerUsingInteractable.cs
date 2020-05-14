@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador está usando el objeto especificado")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/ContinuousActions")]
     public class IsPlayerUsingInteractable : IsPlayerInteracting
     {
         protected override void AddOnListener()

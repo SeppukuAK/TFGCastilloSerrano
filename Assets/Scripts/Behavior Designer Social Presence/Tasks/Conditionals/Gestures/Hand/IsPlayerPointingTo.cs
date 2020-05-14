@@ -2,13 +2,13 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// TODO: Eliminar debug, Refinarlo para que vaya mejor, problemas de FPS?
     /// </summary>
     [TaskDescription("Devuelve si el jugador está señalando a un GameObject")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Gestures/Hand")]
     public class IsPlayerPointingTo : Conditional
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto que tiene que señalar el jugador")]

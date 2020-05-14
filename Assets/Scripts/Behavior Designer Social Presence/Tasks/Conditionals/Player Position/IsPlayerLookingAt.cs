@@ -8,7 +8,7 @@ namespace SocialPresenceVR
     /// TODO: Eliminar debug, Refinarlo para que vaya mejor, problemas de FPS?
     /// </summary>
     [TaskDescription("Devuelve si el jugador está mirando a un GameObject")]
-    [TaskCategory("SocialPresenceVR")]
+    [TaskCategory("SocialPresenceVR/PlayerPosition")]
     public class IsPlayerLookingAt : Conditional
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto que representa al jugador")]

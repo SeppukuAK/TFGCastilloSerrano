@@ -3,10 +3,10 @@ using BehaviorDesigner.Runtime.Tasks;
 using BehaviorDesigner.Runtime;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Versión arreglada del CanSeeObject")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR")]
     public class MyCanSeeObject : Conditional
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The object that we are searching for")]

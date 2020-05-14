@@ -3,7 +3,7 @@ using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 using UnityEditor.Animations;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// TODO: No se si es necesario un default animation
@@ -11,7 +11,7 @@ namespace TFG
     /// TODO: Parametrizar mucho mejor, todo lo que tenga que ver con animaciones
     /// </summary>
     [TaskDescription("Inicializa NPC con Presencia Social")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Init")]
     public class Init_SP_NPC : Action
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Altura del jugador en metros")]

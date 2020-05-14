@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador está apuntando a un objeto con el laser")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/ContinuousActions")]
     public class IsPlayerPointingInteractable : IsPlayerInteracting
     {
         protected override void AddOnListener()

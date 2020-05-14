@@ -2,13 +2,13 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     /// <summary>
     /// TODO: Añadir complejidad: Mano cerrada, abierta o señalar
     /// </summary>
     [TaskDescription("Devuelve si el jugador está levantando una mano.")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/Gestures/Hand")]
     public class IsPlayerRaisingHand : Conditional
     {
         //[BehaviorDesigner.Runtime.Tasks.Tooltip("¿Tiene que tener ambas manos levantadas?")]

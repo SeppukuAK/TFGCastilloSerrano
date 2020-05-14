@@ -5,10 +5,10 @@ using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Obtiene el ingrediente que forma parte de la misión más cercano")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class FindNearestIngredient : Action
     {

@@ -1,9 +1,9 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
 
-namespace TFG
+namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador ha dejado de usar un objeto")]
-    [TaskCategory("TFG")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/EventActions")]
     public class OnPlayerDeactivateInteractable : OnPlayerInteraction
     {
         protected override void AddListener()
