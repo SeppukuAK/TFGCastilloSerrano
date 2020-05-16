@@ -5,7 +5,8 @@ using UnityEngine;
 namespace SocialPresenceVR
 {
     /// <summary>
-    /// TODO: Eliminar debug, Refinarlo para que vaya mejor, problemas de FPS?
+    /// TODO: Eliminar debug, Refinarlo para que vaya mejor (Mayor complejidad). 
+    /// TODO: Es posible que se pueda unificar con mirar objeto.
     /// </summary>
     [TaskDescription("Devuelve si el jugador está señalando a un GameObject")]
     [TaskCategory("SocialPresenceVR/Gestures/Hand")]

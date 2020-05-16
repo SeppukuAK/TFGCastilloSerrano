@@ -1,4 +1,5 @@
 ﻿using BehaviorDesigner.Runtime.Tasks;
+using FrameSynthesis.VR;
 
 namespace SocialPresenceVR
 {
@@ -6,9 +7,16 @@ namespace SocialPresenceVR
     [TaskCategory("SocialPresenceVR/Gestures/Head")]
     public class CheckHeadShake : Conditional
     {
+        HeadGestureState headGestureController;
+
+        public override void OnAwake()
+        {
+            headGestureController = VRGestureRecognizer.Current.GetComponent<HeadGestureState>();
+        }
+
         public override TaskStatus OnUpdate()
         {
-            if (HeadGestureManager.Instance.HeadShaking)
+            if (headGestureController.HeadShaking)
                 return TaskStatus.Success;
             else
                 return TaskStatus.Failure;

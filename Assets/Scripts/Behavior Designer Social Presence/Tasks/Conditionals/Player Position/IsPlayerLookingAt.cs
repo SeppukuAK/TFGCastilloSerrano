@@ -5,7 +5,8 @@ using UnityEngine;
 namespace SocialPresenceVR
 {
     /// <summary>
-    /// TODO: Eliminar debug, Refinarlo para que vaya mejor, problemas de FPS?
+    /// TODO: Eliminar debug, Refinarlo para que vaya mejor (Mayor complejidad). 
+    /// TODO: Es posible que se pueda unificar con mirar objeto.
     /// </summary>
     [TaskDescription("Devuelve si el jugador está mirando a un GameObject")]
     [TaskCategory("SocialPresenceVR/PlayerPosition")]
@@ -20,12 +21,14 @@ namespace SocialPresenceVR
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Distancia máxima desde la que se detecta que está mirando al objeto")]
         public SharedFloat LookingAtDistance;
 
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Tiempo de duracion de comprobacion de si esta mirando")]
+        public float CheckRate;
+
         private Transform targetTransform;//transform del jugador
         private Vector3 leftOffset, rightOffset;//Posiciones de los ojos
 
         //Variables para el contador
         private float nextCheck;//Siguiente momento en el que va a comprobarse si esta mirando
-        public float checkRate;//Tiempo de duracion de comprobacion de si esta mirando
 
         public override void OnStart()
         {
@@ -37,7 +40,7 @@ namespace SocialPresenceVR
             targetTransform = targetObject.Value.transform;
 
             //Se inicializa el siguiente instante en el que termina la comprobacion de si el jugador está mirando a un objeto
-            nextCheck = Time.time + checkRate;
+            nextCheck = Time.time + CheckRate;
         }
 
         /// <summary>
@@ -68,7 +71,6 @@ namespace SocialPresenceVR
             //Se comprueba si hay colisión
             if (Physics.Raycast(player.position + leftOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value) || Physics.Raycast(player.position + rightOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value))
             {
-                Debug.Log(hit.collider.name);
                 //Recorrido de cada uno de los objetos asociados
                 foreach (GameObject item in Objects.Value)
                 {
