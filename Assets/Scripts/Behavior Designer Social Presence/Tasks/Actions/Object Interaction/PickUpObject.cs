@@ -13,7 +13,10 @@ namespace SocialPresenceVR
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto interactuable a recoger")]
         public SharedGameObject Interactable;
 
+        //Referencias
+        private SP_NPC NPC;
         private GameObject hand;    // Mano del NPC
+
         private bool success;       // Booleana que indica si puede recoger el objeto correctamente
 
         /// <summary>
@@ -21,27 +24,42 @@ namespace SocialPresenceVR
         /// </summary>
         public override void OnAwake()
         {
-            hand = GetComponent<SP_NPC>().Hand;
+            NPC = GetComponent<SP_NPC>();
+            hand = NPC.Hand;
         }
 
         public override void OnStart()
         {
-            if (!Interactable.Value.GetComponent<XRBaseInteractable>() || !Interactable.Value.GetComponent<Rigidbody>())
+            Rigidbody rb = Interactable.Value.GetComponent<Rigidbody>();
+            XRBaseInteractable interactable = Interactable.Value.GetComponent<XRBaseInteractable>();
+
+            if (NPC.GrabbedInteractable.Interactable)
+            {
+                Debug.LogError("Ya hay un objeto agarrado");
+                success = false;
+            }
+            else if (!interactable || !rb)
             {
                 Debug.LogError("Objeto a recoger no interactuable");
                 success = false;
             }
             else
             {
+                //Se guarda la información del Objeto
+                InteractableInfo interactableInfo = new InteractableInfo
+                {
+                    Interactable = interactable,
+                    Parent = interactable.transform.parent,
+                    IsKinematic = rb.isKinematic
+                };
+                NPC.GrabbedInteractable = interactableInfo;
+
                 //Se une la posicion del objeto a la posicion de la mano         
                 Interactable.Value.transform.SetParent(hand.transform, true);
 
                 //Se resetean la posicion y la rotación del ingrediente 
                 Interactable.Value.transform.localPosition = new Vector3(0, 0, 0);
                 Interactable.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
-
-                //Se obtiene el Rigidbody del objeto
-                Rigidbody rb = Interactable.Value.GetComponent<Rigidbody>();
 
                 //El objeto deja de responder a la física
                 rb.isKinematic = true;

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 using UnityEditor.Animations;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace SocialPresenceVR
 {
@@ -28,6 +29,11 @@ namespace SocialPresenceVR
         /// Ruta donde se encuentra el animator controller creado para el NPC
         /// </summary>
         public string AnimatorControllerPath { get; set; }
+
+        /// <summary>
+        /// Información actual del objeto interactuable agarrado
+        /// </summary>
+        public InteractableInfo GrabbedInteractable;
 
         /// <summary>
         /// Destruye el asset del animator controller
