@@ -1,44 +1,62 @@
 ﻿using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace SocialPresenceVR
 {
-    [TaskDescription("El NPC coge un ingrediente")]
+    [TaskDescription("El NPC coge un objeto interactuable")]
     [TaskCategory("SocialPresenceVR/ObjectInteraction")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
     public class PickUpObject : Action
     {
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("Ingrediente que se ha cogido")]
-        public SharedGameObject Ingredient;
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto interactuable a recoger")]
+        public SharedGameObject Interactable;
 
-        private GameObject hand;//Mano del NPC
-        private Rigidbody rb;//Rigidbody del ingrediente
+        private GameObject hand;    // Mano del NPC
+        private bool success;       // Booleana que indica si puede recoger el objeto correctamente
 
+        /// <summary>
+        /// Obtiene referencias
+        /// </summary>
         public override void OnAwake()
         {
-            //Obtengo la mano del NPC
             hand = GetComponent<SP_NPC>().Hand;
         }
+
         public override void OnStart()
         {
-            //Se obtiene el Rigidbody del ingrediente
-            rb = Ingredient.Value.GetComponent<Rigidbody>();
+            if (!Interactable.Value.GetComponent<XRBaseInteractable>() || !Interactable.Value.GetComponent<Rigidbody>())
+            {
+                Debug.LogError("Objeto a recoger no interactuable");
+                success = false;
+            }
+            else
+            {
+                //Se une la posicion del objeto a la posicion de la mano         
+                Interactable.Value.transform.SetParent(hand.transform, true);
 
-            //Se une la posicion del objeto a la posicion de la mano         
-            Ingredient.Value.transform.SetParent(hand.transform, true);
+                //Se resetean la posicion y la rotación del ingrediente 
+                Interactable.Value.transform.localPosition = new Vector3(0, 0, 0);
+                Interactable.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
 
-            //Se resetean la posicion y la rotación del ingrediente 
-            Ingredient.Value.transform.localPosition = new Vector3(0, 0, 0);
-            Ingredient.Value.transform.localRotation = new Quaternion(0, 0, 0, 1);
+                //Se obtiene el Rigidbody del objeto
+                Rigidbody rb = Interactable.Value.GetComponent<Rigidbody>();
 
-            //El ingrediente deja de responder a la física
-            rb.isKinematic = true;
+                //El objeto deja de responder a la física
+                rb.isKinematic = true;
+
+                //Objeto recogido correctamente
+                success = true;
+            }
         }
 
         public override TaskStatus OnUpdate()
         {
-            return TaskStatus.Success;
+            if (success)
+                return TaskStatus.Success;
+            else
+                return TaskStatus.Failure;
         }
     }
 }
