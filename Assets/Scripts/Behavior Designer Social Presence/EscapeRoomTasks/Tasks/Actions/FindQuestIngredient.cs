@@ -1,30 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
-using UnityEditor;
 
 namespace SocialPresenceVR
 {
-    [TaskDescription("Obtiene el ingrediente que forma parte de la misión más cercano")]
+    [TaskDescription("Obtiene un ingrediente que forma parte de la misión en el area establece")]
     [TaskCategory("SocialPresenceVR")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
-    public class FindNearestIngredient : Action
+    public class FindQuestIngredient : Action
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Distancia a la que se tiene que encontrar el ingrediente para ser detectado")]
         public SharedFloat magnitude = 5;
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("Ingrediente encontrado más cercano")]
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Ingrediente encontrado (No es necesariamente el más cercano)")]
         public SharedGameObject returnedObject;
 
-        private List<GameObject> objects;//Lista de ingredientes
+        private List<GameObject> objects;   //Lista de ingredientes
 
-        //Variables para la detección de si un objeto está a la distancia establecida
+        //Variable para la detección de si un objeto está a la distancia establecida
         private float sqrMagnitude;
-        private bool overlapCast = false;
 
-        private CauldronContent cauldronContent;//Objeto de la clase CauldronContent necesario para obtener los objetos que se encuentran en el caldero
+        //Objeto de la clase CauldronContent necesario para obtener los objetos que se encuentran en el caldero
+        private CauldronContent cauldronContent;   
 
+        /// <summary>
+        /// Obtiene referencias
+        /// </summary>
         public override void OnAwake()
         {
             var cauldronObject = Object.FindObjectOfType<CauldronContent>();
@@ -47,6 +48,9 @@ namespace SocialPresenceVR
                 return false;
         }
 
+        /// <summary>
+        /// Crea una lista con todos los ingredientes en la escena que no estén en el caldero
+        /// </summary>
         public override void OnStart()
         {
             sqrMagnitude = magnitude.Value * magnitude.Value;
@@ -58,18 +62,18 @@ namespace SocialPresenceVR
             //Se crea la lista nueva
             else           
                 objects = new List<GameObject>();
-            
-            //Se obtienen todos los objetos que tienen el componente de ingrediente
-            var gameObjects = Object.FindObjectsOfType<CauldronIngredient>();
 
-            for (int i = 0; i < gameObjects.Length; ++i)
+            //Se obtienen todos los objetos que tienen el componente de ingrediente
+            CauldronIngredient [] ingredients = Object.FindObjectsOfType<CauldronIngredient>();
+
+            for (int i = 0; i < ingredients.Length; ++i)
             {
                 //Variable auxiliar para obtener un ingrediente
-                var cauldronIngredient = gameObjects[i].GetComponent<CauldronIngredient>();
+                CauldronIngredient cauldronIngredient = ingredients[i];
 
                 //Añadimos solamente los objetos que no están aún en el caldero y que forman parte de la misión(pluma, calabaza y filete)
                 if (!IsThisIngredientIn(cauldronIngredient.IngredientType) && (cauldronIngredient.IngredientType == "feather" || cauldronIngredient.IngredientType == "pumpkin" || cauldronIngredient.IngredientType == "meat"))
-                    objects.Add(gameObjects[i].gameObject);
+                    objects.Add(ingredients[i].gameObject);
             }
         }
 
@@ -82,27 +86,15 @@ namespace SocialPresenceVR
             if (transform == null || objects == null)
                 return TaskStatus.Failure;
 
-            //Se añaden a la lista los objetos que están a distancia
-            if (overlapCast)
-            {
-                objects.Clear();
-
-                var colliders = Physics2D.OverlapCircleAll(transform.position, magnitude.Value, 1);
-                for (int i = 0; i < colliders.Length; ++i)
-                {
-                    objects.Add(colliders[i].gameObject);
-                }
-            }
-
             Vector3 direction;
 
-            // Se recorren todos los objetos, se devuelve éxito cuando se ha encontrado el más cercano 
+            // Se recorren todos los objetos, se devuelve éxito cuando se ha encontrado uno a distancia
             for (int i = 0; i < objects.Count; ++i)
             {
                 if (objects[i] == null)                
                     continue;
                 
-                direction = objects[i].transform.position - (transform.position);
+                direction = objects[i].transform.position - transform.position;
 
                 // Se encuentra el objeto más cercano
                 if (Vector3.SqrMagnitude(direction) < sqrMagnitude)
@@ -114,6 +106,12 @@ namespace SocialPresenceVR
             // Si no hay objetos en la distancia establecida, se devuelve fallo
             return TaskStatus.Failure;
         }
+
+        public override void OnReset()
+        {
+            magnitude = 5;
+        }
+
 
         /// <summary>
         /// Método de dibujado para representar la distancia establecida

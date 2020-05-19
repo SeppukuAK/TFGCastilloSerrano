@@ -45,7 +45,7 @@ public class CauldronContent : MonoBehaviour
     
     bool m_CanBrew = false;
     
-    List<string> m_CurrentIngredientsIn = new List<string>(); //PUBLICO Heredar?
+    List<string> m_CurrentIngredientsIn = new List<string>();
     int m_Temperature = 0;
     int m_Rotation = -1;
 
@@ -54,6 +54,7 @@ public class CauldronContent : MonoBehaviour
     private CauldronEffects m_CauldronEffect;
 
     public List<string> GetCurrentIngredientsIn() { return m_CurrentIngredientsIn; }
+
     private void Start()
     {
         m_CauldronEffect = GetComponent<CauldronEffects>();

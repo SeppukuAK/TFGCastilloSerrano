@@ -14,7 +14,7 @@ namespace SocialPresenceVR
         public SharedGameObject Interactable;
 
         //Referencias
-        private SP_NPC NPC;
+        private SP_NPC NPC;         // Controlador NPC
         private GameObject hand;    // Mano del NPC
 
         private bool success;       // Booleana que indica si puede recoger el objeto correctamente
@@ -28,6 +28,10 @@ namespace SocialPresenceVR
             hand = NPC.Hand;
         }
 
+        /// <summary>
+        /// Liga el objeto a la mano del NPC.
+        /// Detecta errores.
+        /// </summary>
         public override void OnStart()
         {
             Rigidbody rb = Interactable.Value.GetComponent<Rigidbody>();
