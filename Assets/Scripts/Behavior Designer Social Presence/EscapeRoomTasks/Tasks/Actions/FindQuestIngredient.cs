@@ -21,7 +21,7 @@ namespace SocialPresenceVR
         private float sqrMagnitude;
 
         //Objeto de la clase CauldronContent necesario para obtener los objetos que se encuentran en el caldero
-        private CauldronContent cauldronContent;   
+        private CauldronContent cauldronContent;
 
         /// <summary>
         /// Obtiene referencias
@@ -56,20 +56,23 @@ namespace SocialPresenceVR
             sqrMagnitude = magnitude.Value * magnitude.Value;
 
             //Si la lista de objetos no está vacía al inicio, se limpia
-            if (objects != null)         
+            if (objects != null)
                 objects.Clear();
-            
+
             //Se crea la lista nueva
-            else           
+            else
                 objects = new List<GameObject>();
 
             //Se obtienen todos los objetos que tienen el componente de ingrediente
-            CauldronIngredient [] ingredients = Object.FindObjectsOfType<CauldronIngredient>();
+            CauldronIngredient[] ingredients = Object.FindObjectsOfType<CauldronIngredient>();
+
+            //Random
+            int k = 0;
 
             for (int i = 0; i < ingredients.Length; ++i)
             {
                 //Variable auxiliar para obtener un ingrediente
-                CauldronIngredient cauldronIngredient = ingredients[i];
+                CauldronIngredient cauldronIngredient = ingredients[(i + k) % ingredients.Length];
 
                 //Añadimos solamente los objetos que no están aún en el caldero y que forman parte de la misión(pluma, calabaza y filete)
                 if (!IsThisIngredientIn(cauldronIngredient.IngredientType) && (cauldronIngredient.IngredientType == "feather" || cauldronIngredient.IngredientType == "pumpkin" || cauldronIngredient.IngredientType == "meat"))
@@ -91,9 +94,9 @@ namespace SocialPresenceVR
             // Se recorren todos los objetos, se devuelve éxito cuando se ha encontrado uno a distancia
             for (int i = 0; i < objects.Count; ++i)
             {
-                if (objects[i] == null)                
+                if (objects[i] == null)
                     continue;
-                
+
                 direction = objects[i].transform.position - transform.position;
 
                 // Se encuentra el objeto más cercano

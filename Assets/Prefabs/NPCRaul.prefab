@@ -3699,6 +3699,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7938523535750445678}
+  - {fileID: 626563460589937519}
   m_Father: {fileID: 6494470588521105338}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4666,7 +4667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7955245257145106146}
   m_Layer: 0
-  m_Name: IngredientPosition
+  m_Name: InteractablePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4679,13 +4680,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7078516761856534630}
-  m_LocalRotation: {x: -0.70710677, y: 0.000000052154057, z: -0.000000036554408, w: 0.7071068}
-  m_LocalPosition: {x: -0.0004299999, y: 0.0026300042, z: 0.0058800047}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.002, z: 0.005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5471795271277519455}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7136961682678617439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5141,11 +5142,11 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(434.61322,6.31401062)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.61322,116.314011)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-175.0163,164.091614)"},"ID":2,"Name":"Init
-        SP_NPC","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"Hand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(106.613213,174.313965)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.3867836,116.313965)"},"ID":4,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-112.791229,170.880615)"},"ID":5,"Name":"Proxemical","Instant":true,"ExternalBehavior[]externalBehaviors":[1],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSocialDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":2}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":3}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":4}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":5}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDistLoop","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":6}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Parallel","NodeData":{"Offset":"(181.07135,117.564026)"},"ID":6,"Name":"Parallel","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(-82.26172,137.147217)"},"ID":7,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-10,119.166664)"},"ID":8,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(-92.26178,131.314011)"},"ID":9,"Name":"Inverter","Instant":true,"Children":[{"Type":"SocialPresenceVR.MyCanSeeObject","NodeData":{"Offset":"(-10,120.000008)"},"ID":10,"Name":"My
-        Can See Object","Instant":true,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":90},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1000},"SharedVector3offset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"},"SharedVector3targetOffset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.RotateTowards","NodeData":{"Offset":"(90,121.666672)"},"ID":11,"Name":"Rotate
-        Towards","Instant":true,"BooleanusePhysics2D":false,"SharedFloatrotationEpsilon":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5},"SharedFloatmaxLookAtRotationDelta":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":5},"SharedBoolonlyY":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},"SharedVector3targetRotation":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":null,"Vector3mValue":"(0,0,0)"}}]}]},{"Type":"SocialPresenceVR.PlayAnimationOnLoop","NodeData":{"Offset":"(159.166672,140)"},"ID":12,"Name":"Play
-        Animation On Loop","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":7},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}]}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(434.61322,6.31401062)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.61322,116.314011)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-325.0163,130.75827)"},"ID":2,"Name":"Init
+        SP_NPC","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"Hand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(356.61322,128.480621)"},"ID":3,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(-3.3867836,241.313965)"},"ID":4,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-1819.1665,135)"},"ID":5,"Name":"Bring
+        Interactable","Instant":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPickUp","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":3}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSeek","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":4}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PickUpTime","Stringtype":"SharedFloat","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimGive","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":5}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"BringQuestIngredient","Stringtype":"SharedBool","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"BringQuestIngredient","IsShared":true,"BooleanmValue":false}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-905,140)"},"ID":6,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"SocialPresenceVR.IsPlayerRaisingHand","NodeData":{"Offset":"(-128.563354,141.330322)"},"ID":7,"Name":"Is
+        Player Raising Hand","Instant":true,"SharedFloatDiff":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.3}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.SetSharedBool","NodeData":{"Offset":"(155,130)"},"ID":8,"Name":"Set
+        Shared Bool","Instant":true,"SharedBooltargetValue":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBooltargetVariable":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"BringQuestIngredient","IsShared":true,"BooleanmValue":false}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(2402.72168,127.395752)"},"ID":9,"Name":"Proxemical","Instant":true,"ExternalBehavior[]externalBehaviors":[6],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSocialDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":7}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":8}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":9}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":10}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDistLoop","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":11}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(4231.72852,128.813721)"},"ID":10,"Name":"Idle","Instant":true,"ExternalBehavior[]externalBehaviors":[12],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":null,"AnimationClipmValue":13}}}],"Booleancollapsed":false}]}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"BringQuestIngredient","IsShared":true,"BooleanmValue":false}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -5153,12 +5154,18 @@ MonoBehaviour:
         dataPosition: 
         unityObjects:
         - {fileID: 11400000, guid: d0c3a0df3d45c034a964255f6137f297, type: 2}
+        - {fileID: 7078516761856534630}
+        - {fileID: 11400000, guid: 953a1d1743919c044b6239d74dfc9194, type: 2}
+        - {fileID: -203655887218126122, guid: aca128d05d9e3a249a4d466116fdf764, type: 3}
+        - {fileID: 7400000, guid: 2e5cbd52f3af8384fafcc9a73ad2f1e0, type: 2}
+        - {fileID: -203655887218126122, guid: 8d578265027bf7f4391ac90b3fa7eda0, type: 3}
         - {fileID: 11400000, guid: 070ee795b829da042bd189ac98edebca, type: 2}
         - {fileID: 7400000, guid: 6fd7082454b5e8f4eaef795e9a384dfa, type: 2}
         - {fileID: 7400000, guid: 23c0d86c9ee13b14e989e8dbcb08489a, type: 2}
         - {fileID: 7400000, guid: 23c0d86c9ee13b14e989e8dbcb08489a, type: 2}
         - {fileID: -203655887218126122, guid: 96776dbf53a2d3c48aa89fe39c6320e6, type: 3}
         - {fileID: 7400000, guid: 6b64f85c5ee58984a8e4d87ffdce9b5d, type: 2}
+        - {fileID: 11400000, guid: 36ff23853ed50f949b8f4be50d6dc921, type: 2}
         - {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c, type: 3}
         byteData: 
         byteDataArray: 
@@ -5589,3 +5596,98 @@ Transform:
   m_Father: {fileID: 3567292357486593594}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &9023787240858254896
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6487452080878682652}
+    m_Modifications:
+    - target: {fileID: 149163171387550821, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_Name
+      value: RobotAura
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010883064457217297, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0031997012
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0007344335
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000008146034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69fd3782281e27841bd99a359ae996a0, type: 3}
+--- !u!4 &626563460589937519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8469281378657967455, guid: 69fd3782281e27841bd99a359ae996a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 9023787240858254896}
+  m_PrefabAsset: {fileID: 0}

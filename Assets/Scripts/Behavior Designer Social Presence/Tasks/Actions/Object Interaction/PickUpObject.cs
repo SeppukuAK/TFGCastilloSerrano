@@ -42,7 +42,7 @@ namespace SocialPresenceVR
                 Debug.LogError("Ya hay un objeto agarrado");
                 success = false;
             }
-            else if (!interactable || !rb)
+            else if (!interactable || !rb || interactable.isSelected)
             {
                 Debug.LogError("Objeto a recoger no interactuable");
                 success = false;
