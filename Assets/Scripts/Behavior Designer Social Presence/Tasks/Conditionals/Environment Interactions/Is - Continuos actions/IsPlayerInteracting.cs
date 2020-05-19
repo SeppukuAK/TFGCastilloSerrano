@@ -12,7 +12,6 @@ namespace SocialPresenceVR
         public SharedXRInteractable XRInteractable;
 
         private bool interaction;
-        private bool subscribed;
 
         /// <summary>
         /// Método que tiene que ser suscrito.
@@ -32,18 +31,8 @@ namespace SocialPresenceVR
         public override void OnAwake()
         {
             interaction = false;
-            subscribed = false;
-
-        }
-
-        public override void OnStart()
-        {
-            if (!subscribed)
-            {
-                subscribed = true;
-                AddOnListener();
-                AddOffListener();
-            }
+            AddOnListener();
+            AddOffListener();
         }
 
         /// <summary>
