@@ -67,7 +67,7 @@ namespace SocialPresenceVR
             CauldronIngredient[] ingredients = Object.FindObjectsOfType<CauldronIngredient>();
 
             //Random
-            int k = 0;
+            int k = Random.Range(0, ingredients.Length);
 
             for (int i = 0; i < ingredients.Length; ++i)
             {
