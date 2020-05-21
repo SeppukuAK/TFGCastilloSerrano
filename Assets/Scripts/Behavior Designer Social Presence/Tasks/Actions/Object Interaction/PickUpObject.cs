@@ -37,12 +37,7 @@ namespace SocialPresenceVR
             Rigidbody rb = Interactable.Value.GetComponent<Rigidbody>();
             XRBaseInteractable interactable = Interactable.Value.GetComponent<XRBaseInteractable>();
 
-            if (NPC.GrabbedInteractable.Interactable)
-            {
-                Debug.LogError("Ya hay un objeto agarrado");
-                success = false;
-            }
-            else if (!interactable || !rb || interactable.isSelected)
+            if (!interactable || !rb)
             {
                 Debug.LogError("Objeto a recoger no interactuable");
                 success = false;
