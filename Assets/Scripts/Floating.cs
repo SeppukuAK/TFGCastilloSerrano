@@ -11,12 +11,6 @@ public class Floating : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.DOPath(pathval, 6, pathSystem).SetRelative().SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.DOLocalPath(pathval, 6, pathSystem).SetRelative().SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 }
