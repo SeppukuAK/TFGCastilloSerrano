@@ -20600,51 +20600,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3790118826161527199, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978899184823, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978899205401, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_graphyMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_fpsGraphResolution
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_ramGraphResolution
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_ramModuleState
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_audioModuleState
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3790545978910558113, guid: e49d0f2a791f9e14b959727659b0e868,
-        type: 3}
-      propertyPath: m_advancedModuleState
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4976620856850849592, guid: e49d0f2a791f9e14b959727659b0e868,
         type: 3}
       propertyPath: m_LocalPosition.x
