@@ -22688,7 +22688,7 @@ PrefabInstance:
       objectReference: {fileID: 1192012951}
     - target: {fileID: 679535520162632644, guid: be89824c796ed5e4fa9a4981a8dd5612,
         type: 3}
-      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[18]
+      propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[19]
       value: 
       objectReference: {fileID: 2093041026}
     - target: {fileID: 6762766691609240892, guid: be89824c796ed5e4fa9a4981a8dd5612,
