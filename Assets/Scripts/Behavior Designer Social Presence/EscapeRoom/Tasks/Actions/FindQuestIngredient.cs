@@ -71,12 +71,13 @@ namespace SocialPresenceVR
 
             for (int i = 0; i < ingredients.Length; ++i)
             {
+                int randomI = (i + k) % ingredients.Length;
                 //Variable auxiliar para obtener un ingrediente
-                CauldronIngredient cauldronIngredient = ingredients[(i + k) % ingredients.Length];
+                CauldronIngredient cauldronIngredient = ingredients[randomI];
 
                 //Añadimos solamente los objetos que no están aún en el caldero y que forman parte de la misión(pluma, calabaza y filete)
                 if (!IsThisIngredientIn(cauldronIngredient.IngredientType) && (cauldronIngredient.IngredientType == "feather" || cauldronIngredient.IngredientType == "pumpkin" || cauldronIngredient.IngredientType == "meat"))
-                    objects.Add(ingredients[i].gameObject);
+                    objects.Add(ingredients[randomI].gameObject);
             }
         }
 
