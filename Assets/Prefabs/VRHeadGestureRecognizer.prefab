@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90909e5f08798444aa89e4fcc2d9dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recognitionInterval: 2
+  recognitionInterval: 0.5
+  maxNodValue: 40
+  nodValue: 20
+  maxHeadShakeValue: 50
+  headShakeValue: 25
 --- !u!114 &19285564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,5 +61,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c62015c4165b544bda35da8a210e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NodDuration: 1
-  HeadShakeDuration: 1
+  NodDuration: 0.1
+  HeadShakeDuration: 0.1

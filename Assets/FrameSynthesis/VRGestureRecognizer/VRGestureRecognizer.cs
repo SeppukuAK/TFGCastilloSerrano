@@ -23,12 +23,25 @@ namespace FrameSynthesis.VR
         }
     }
 
+    /// <summary>
+    /// Modificación propia de detección de gestos con la cabeza.
+    /// Utilizada para modificar los valores de detección de los gestos.
+    /// TODO: Se podría arreglar el warning
+    /// </summary>
     public class VRGestureRecognizer : MonoBehaviour
     {
         public static VRGestureRecognizer Current { get; private set; }
 
         [SerializeField]
         float recognitionInterval = 0.5f;
+
+        [Header("Nod")]
+        [SerializeField] float maxNodValue = 10f;
+        [SerializeField] float nodValue = 5f;
+
+        [Header("Headshake")]
+        [SerializeField] float maxHeadShakeValue = 10f;
+        [SerializeField] float headShakeValue = 5f;
 
         public event Action NodHandler;
         public event Action HeadshakeHandler;
@@ -73,8 +86,8 @@ namespace FrameSynthesis.VR
                 var maxPitch = PoseSamplesWithin(0.01f, 0.2f).Max(sample => sample.eulerAngles.x);
                 var pitch = PoseSamples.First().eulerAngles.x;
 
-                if (maxPitch - averagePitch > 10f &&
-                    Mathf.Abs(pitch - averagePitch) < 5f)
+                if (maxPitch - averagePitch > maxNodValue &&
+                    Mathf.Abs(pitch - averagePitch) < nodValue)
                 {
                     if (prevGestureTime < Time.time - recognitionInterval)
                     {
@@ -98,8 +111,8 @@ namespace FrameSynthesis.VR
                 var minYaw = PoseSamplesWithin(0.01f, 0.2f).Min(sample => sample.eulerAngles.y);
                 var yaw = PoseSamples.First().eulerAngles.y;
 
-                if ((maxYaw - averageYaw > 10f || averageYaw - minYaw > 10f) &&
-                    Mathf.Abs(yaw - averageYaw) < 5f)
+                if ((maxYaw - averageYaw > maxHeadShakeValue || averageYaw - minYaw > maxHeadShakeValue) &&
+                    Mathf.Abs(yaw - averageYaw) < headShakeValue)
                 {
                     if (prevGestureTime < Time.time - recognitionInterval)
                     {
