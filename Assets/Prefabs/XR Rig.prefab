@@ -2769,6 +2769,26 @@ PrefabInstance:
       propertyPath: m_advancedModuleState
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211155571, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectColor.a
+      value: 0.903
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211155571, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211155571, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectDistance.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211155571, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_UseGraphicAlpha
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5119f91e6d329fb478dcd823ca07b3d8, type: 3}
 --- !u!224 &3790545978885814545 stripped
