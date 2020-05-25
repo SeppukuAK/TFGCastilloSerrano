@@ -2,6 +2,7 @@
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor.Animations;
+using System.Collections.Generic;
 
 namespace SocialPresenceVR
 {
@@ -28,7 +29,12 @@ namespace SocialPresenceVR
         /// <summary>
         /// Nombre del trigger de esta transición
         /// </summary>
-        private string triggerName;    
+        private string triggerName;
+
+        /// <summary>
+        /// Lista con la lista de animaciones creadas
+        /// </summary>
+        private static List<string> transtionsCreated = new List<string>();
 
         /// <summary>
         /// Crea la transición
@@ -38,7 +44,7 @@ namespace SocialPresenceVR
             animator = GetComponent<Animator>();
             CreateAnimatorTransition();
         }
-
+ 
         /// <summary>
         /// Crea el estado en la máquina de estados y su transición
         /// </summary>
@@ -49,21 +55,27 @@ namespace SocialPresenceVR
 
             triggerName = AnimationClip.Value.name + "Trigger";
 
-            //Creación de los parámetros y la transición
-            AnimatorController controller = GetComponent<SP_NPC>().AnimatorController;
+            if (!transtionsCreated.Contains(triggerName))
+            {
+                transtionsCreated.Add(triggerName);
 
-            controller.AddParameter(triggerName, AnimatorControllerParameterType.Trigger);
+                //Creación de los parámetros y la transición
+                AnimatorController controller = GetComponent<SP_NPC>().AnimatorController;
 
-            //Maquina de estados
-            var rootStateMachine = controller.layers[0].stateMachine;
+                controller.AddParameter(triggerName, AnimatorControllerParameterType.Trigger);
 
-            var newState = rootStateMachine.AddState(AnimationClip.Value.name);
+                //Maquina de estados
+                var rootStateMachine = controller.layers[0].stateMachine;
 
-            newState.motion = AnimationClip.Value;
+                var newState = rootStateMachine.AddState(AnimationClip.Value.name);
 
-            var resetTransition = rootStateMachine.AddAnyStateTransition(newState);
-            resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
-            resetTransition.duration = TransitionDuration.Value;
+                newState.motion = AnimationClip.Value;
+
+                var resetTransition = rootStateMachine.AddAnyStateTransition(newState);
+                resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
+                resetTransition.duration = TransitionDuration.Value;
+
+            }
         }
 
         /// <summary>

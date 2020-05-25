@@ -3,6 +3,7 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEditor.Animations;
+using System.Collections.Generic;
 
 namespace SocialPresenceVR
 {
@@ -38,6 +39,11 @@ namespace SocialPresenceVR
         bool ended;
 
         /// <summary>
+        /// Lista con la lista de animaciones creadas
+        /// </summary>
+        private static List<string> transtionsCreated = new List<string>();
+
+        /// <summary>
         /// Crea la transición
         /// </summary>
         public override void OnAwake()
@@ -53,23 +59,27 @@ namespace SocialPresenceVR
         {
             triggerName = AnimationClip.Value.name + "Trigger";
 
-            //Creación de los parámetros y la transición
-            AnimatorController controller = GetComponent<SP_NPC>().AnimatorController;
+            if (!transtionsCreated.Contains(triggerName))
+            {
+                transtionsCreated.Add(triggerName);
+                //Creación de los parámetros y la transición
+                AnimatorController controller = GetComponent<SP_NPC>().AnimatorController;
 
-            controller.AddParameter(triggerName, AnimatorControllerParameterType.Trigger);
+                controller.AddParameter(triggerName, AnimatorControllerParameterType.Trigger);
 
-            //Maquina de estados
-            var rootStateMachine = controller.layers[0].stateMachine;
+                //Maquina de estados
+                var rootStateMachine = controller.layers[0].stateMachine;
 
-            var newState = rootStateMachine.AddState(AnimationClip.Value.name);
+                var newState = rootStateMachine.AddState(AnimationClip.Value.name);
 
-            newState.motion = AnimationClip.Value;
+                newState.motion = AnimationClip.Value;
 
-            var resetTransition = rootStateMachine.AddAnyStateTransition(newState);
-            resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
-            resetTransition.duration = TransitionDuration.Value;
+                var resetTransition = rootStateMachine.AddAnyStateTransition(newState);
+                resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
+                resetTransition.duration = TransitionDuration.Value;
 
-            animDuration = AnimationClip.Value.length;
+                animDuration = AnimationClip.Value.length;
+            }
         }
 
         /// <summary>
