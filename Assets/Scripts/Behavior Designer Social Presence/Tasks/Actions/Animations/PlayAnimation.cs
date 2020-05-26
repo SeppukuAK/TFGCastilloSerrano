@@ -58,6 +58,7 @@ namespace SocialPresenceVR
         private void CreateAnimatorTransition()
         {
             triggerName = AnimationClip.Value.name + "Trigger";
+            animDuration = AnimationClip.Value.length;
 
             if (!transtionsCreated.Contains(triggerName))
             {
@@ -77,8 +78,6 @@ namespace SocialPresenceVR
                 var resetTransition = rootStateMachine.AddAnyStateTransition(newState);
                 resetTransition.AddCondition(AnimatorConditionMode.If, 0, triggerName);
                 resetTransition.duration = TransitionDuration.Value;
-
-                animDuration = AnimationClip.Value.length;
             }
         }
 
