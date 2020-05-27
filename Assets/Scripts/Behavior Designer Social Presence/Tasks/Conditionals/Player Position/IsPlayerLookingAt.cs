@@ -1,6 +1,8 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
+using System.Collections;
+
 
 namespace SocialPresenceVR
 {
@@ -13,10 +15,10 @@ namespace SocialPresenceVR
     public class IsPlayerLookingAt : Conditional
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Objeto que representa al jugador")]
-        public SharedGameObject targetObject;
+        public SharedGameObject Player;
 
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Objetos que puede mirar el jugador y generan una respuesta en el NPC")]
-        public SharedGameObjectList Objects;
+        public SharedGameObject Object;
 
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Distancia máxima desde la que se detecta que está mirando al objeto")]
         public SharedFloat LookingAtDistance;
@@ -30,17 +32,47 @@ namespace SocialPresenceVR
         //Variables para el contador
         private float nextCheck;//Siguiente momento en el que va a comprobarse si esta mirando
 
-        public override void OnStart()
+        private bool isLooking;
+        private bool isChecking;
+
+        public override void OnAwake()
         {
+            isChecking = false;
+            isLooking = false;
+
             //Inicializacion de las posiciones de los ojos
             leftOffset = new Vector3(-0.1f, 0.1f, 0.1f);
             rightOffset = new Vector3(0.1f, 0.1f, 0.1f);
+        }
 
+        public override void OnStart()
+        {
             //Se obtiene el transform del jugador
-            targetTransform = targetObject.Value.transform;
+            targetTransform = Player.Value.transform;
 
+            nextCheck = Time.time + CheckRate;
+        }
+
+        private IEnumerator LookingRoutine()
+        {
             //Se inicializa el siguiente instante en el que termina la comprobacion de si el jugador está mirando a un objeto
             nextCheck = Time.time + CheckRate;
+
+            //Mientras siga mirando durante CheckRate Seconds
+            while (Time.time <= nextCheck && RaycastCollideWithObject(Player.Value.transform))
+                yield return new WaitForFixedUpdate();
+
+            //Está mirando
+            isLooking = Time.time >= nextCheck;
+
+            isChecking = false;
+
+            yield return null;
+        }
+
+        public override void OnEnd()
+        {
+            isLooking = false;
         }
 
         /// <summary>
@@ -49,14 +81,24 @@ namespace SocialPresenceVR
         /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
-            if (Time.time > nextCheck && RaycastCollideWithObject(targetTransform))
+            if (isLooking)
+            {
+                Debug.Log("MIRANDO");
                 return TaskStatus.Success;
+            }
 
-            //Si el jugador deja de mirar a un objeto o ha acabado el tiempo y no ha estado mirando a un objeto, devuelve fallo
-            else if (Time.time > nextCheck || !RaycastCollideWithObject(targetTransform))
-                return TaskStatus.Failure;
             else
-                return TaskStatus.Running;
+            {
+                if (!isChecking)
+                {
+                    isChecking = true;
+                    StartCoroutine(LookingRoutine());
+                }
+
+                //Si el jugador deja de mirar a un objeto o ha acabado el tiempo y no ha estado mirando a un objeto, devuelve fallo
+                return TaskStatus.Failure;
+            }
+
         }
 
         /// <summary>
@@ -67,26 +109,22 @@ namespace SocialPresenceVR
         private bool RaycastCollideWithObject(Transform player)
         {
             RaycastHit hit;
-         
+
             //Se comprueba si hay colisión
             if (Physics.Raycast(player.position + leftOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value) || Physics.Raycast(player.position + rightOffset, player.TransformDirection(Vector3.forward), out hit, LookingAtDistance.Value))
             {
-                //Recorrido de cada uno de los objetos asociados
-                foreach (GameObject item in Objects.Value)
-                {
-                    Collider[] colliders = item.GetComponentsInChildren<Collider>();
-                  
-                    //Recorrido de todos los posibles colliders del objeto
-                    foreach (Collider collider in colliders)
-                    {
-                        if (hit.collider == collider)
-                        {
-                            //Se dibujan los rayos cuando se está viendo un objeto(Verde)
-                            Debug.DrawRay(player.position + leftOffset, player.TransformDirection(Vector3.forward) * hit.distance, Color.green);
-                            Debug.DrawRay(player.position + rightOffset, player.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+                Collider[] colliders = Object.Value.GetComponentsInChildren<Collider>();
 
-                            return true;
-                        }
+                //Recorrido de todos los posibles colliders del objeto
+                foreach (Collider collider in colliders)
+                {
+                    if (hit.collider == collider)
+                    {
+                        //Se dibujan los rayos cuando se está viendo un objeto(Verde)
+                        Debug.DrawRay(player.position + leftOffset, player.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+                        Debug.DrawRay(player.position + rightOffset, player.TransformDirection(Vector3.forward) * hit.distance, Color.green);
+
+                        return true;
                     }
                 }
             }
