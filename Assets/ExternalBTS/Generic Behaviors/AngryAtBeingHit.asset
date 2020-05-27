@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b23f08d2ae4cba14087c1ed36193d82b, type: 3}
+  m_Name: AngryAtBeingHit
+  m_EditorClassIdentifier: 
+  mBehaviorSource:
+    behaviorName: Behavior
+    behaviorDescription: 
+    mTaskData:
+      types: []
+      parentIndex: 
+      startIndex: 
+      variableStartIndex: 
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(-371.4095,5.95214844)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-4.999939,135)","Comment":"Has
+        Been Hit By Component\nHace Debug.Log cuando ha sido golpeado por un objeto
+        con el componente especificado"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.HasEnteredCollision","NodeData":{"Offset":"(-390,180)"},"ID":2,"Name":"Has
+        Entered Collision","Instant":true,"SharedStringtag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null},"SharedGameObjectcollidedGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitObject","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.UnityGameObject.GetComponent","NodeData":{"Offset":"(-179.999939,190)"},"ID":3,"Name":"Get
+        Component","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitObject","IsShared":true},"SharedStringtype":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":null,"StringmValue":"XRBaseInteractable"},"SharedObjectstoreValue":{"Type":"BehaviorDesigner.Runtime.SharedObject","Name":"HitObjectComponent","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Inverter","NodeData":{"Offset":"(30.000061,180)","Comment":"Si
+        el objeto tiene el componente"},"ID":4,"Name":"Inverter","Instant":true,"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Unity.SharedVariables.CompareSharedObject","NodeData":{"Offset":"(6.10351563E-05,120)"},"ID":5,"Name":"Compare
+        Shared Object","Instant":true,"SharedObjectvariable":{"Type":"BehaviorDesigner.Runtime.SharedObject","Name":"HitObjectComponent","IsShared":true},"SharedObjectcompareTo":{"Type":"BehaviorDesigner.Runtime.SharedObject","Name":null}}]},{"Type":"SocialPresenceVR.ChangeJammoEyes","NodeData":{"Offset":"(473.5905,163.452148)"},"ID":6,"Name":"Change
+        Jammo Eyes","Instant":true,"SharedIntNewEyesState":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":3}},{"Type":"BehaviorDesigner.Runtime.Tasks.ParallelSelector","NodeData":{"Offset":"(682.191467,233.4524)"},"ID":7,"Name":"Parallel
+        Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"SocialPresenceVR.PlayAnimation","NodeData":{"Offset":"(-110,190)"},"ID":8,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHit","IsShared":true},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}},{"Type":"SocialPresenceVR.PlaySoundEffect","NodeData":{"Offset":"(146.090515,195.952148)"},"ID":9,"Name":"Play
+        Sound Effect","Instant":true,"SharedGameObjecttargetGameObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitSource","IsShared":true}}]},{"Type":"SocialPresenceVR.ChangeJammoEyes","NodeData":{"Offset":"(930,145)"},"ID":10,"Name":"Change
+        Jammo Eyes","Instant":true,"SharedIntNewEyesState":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":1}},{"Type":"BehaviorDesigner.Runtime.Tasks.ParallelSelector","NodeData":{"Offset":"(1165,140)"},"ID":11,"Name":"Parallel
+        Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"SocialPresenceVR.PlayAnimation","NodeData":{"Offset":"(-110,190)"},"ID":12,"Name":"Play
+        Animation","Instant":true,"SharedAnimationClipAnimationClip":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimAngry","IsShared":true},"SharedFloatTransitionDuration":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":0.5}},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(190.000061,200)"},"ID":13,"Name":"Talk","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TalkSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"TalkSource","IsShared":true}}}],"Booleancollapsed":false}]},{"Type":"SocialPresenceVR.ChangeJammoEyes","NodeData":{"Offset":"(1408.47827,135)"},"ID":14,"Name":"Change
+        Jammo Eyes","Instant":true,"SharedIntNewEyesState":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0}}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitObject","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedObject","Name":"HitObjectComponent","IsShared":true},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHit","IsShared":true},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimAngry","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitSource","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"TalkSource","IsShared":true}]}'
+      fieldSerializationData:
+        typeName: []
+        fieldNameHash: 
+        startIndex: 
+        dataPosition: 
+        unityObjects:
+        - {fileID: 11400000, guid: bc3b99290b89c7f4abb06bfa53f20277, type: 2}
+        byteData: 
+        byteDataArray: 
+      Version: 1.6.4

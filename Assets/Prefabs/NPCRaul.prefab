@@ -706,6 +706,133 @@ Transform:
   m_Father: {fileID: 2926188174819720958}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &809876499008110888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5845420075088490503}
+  - component: {fileID: 7158854673389947047}
+  m_Layer: 0
+  m_Name: DisconnectedSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5845420075088490503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809876499008110888}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1188367650463431295}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &7158854673389947047
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809876499008110888}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 940bf8f94877d5d4797095e8e73facd2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &836543060336215219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,10 +5807,10 @@ MonoBehaviour:
       JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(434.61322,6.31401062)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(4.61322,116.314011)"},"ID":1,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-325.0163,130.75827)"},"ID":2,"Name":"Init
         SP_NPC","Instant":true,"ExternalBehavior[]externalBehaviors":[0],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"Hand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":1}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(350,120)","Comment":"SECUENCIA
         DE FASES"},"ID":3,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(-597.0289,284.9999)","Comment":"FASE
-        1\n"},"ID":4,"Name":"Phase1","Instant":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":3}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"StartPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":4}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":5}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NoSequencePos1","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":6}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NoSequencePos2","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":7}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"FramePosition","Stringtype":"SharedTransform","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":8}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TalkSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":9}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(16.5181561,974.0523)"},"ID":5,"Name":"Phase
-        2","Instant":true,"ExternalBehavior[]externalBehaviors":[10],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":11}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":12}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":13}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":14}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":15}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimHandsTouch","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsTouch","IsShared":true,"AnimationClipmValue":16}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimHandsClose","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsClose","IsShared":true,"AnimationClipmValue":17}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSeek","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":18}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"SeekSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":19}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(328.8461,271.538452)"},"ID":6,"Name":"Phase
-        3","Instant":true,"ExternalBehavior[]externalBehaviors":[20],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":21}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":22}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":23}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":24}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":25}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(691.565369,269.230743)"},"ID":7,"Name":"Phase
-        4","Instant":true,"ExternalBehavior[]externalBehaviors":[26],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"DanceSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":27}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSeek","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":28}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":29}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"EndPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":30}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportParticles","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":31}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NPC","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":32}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":33}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"SeekSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":34}}}],"Booleancollapsed":false}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":35},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":36},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimClap","IsShared":true,"AnimationClipmValue":37},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":38},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":39},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":40},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsTouch","IsShared":true,"AnimationClipmValue":41},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsClose","IsShared":true,"AnimationClipmValue":42},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":43},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":44}]}'
+        1\n"},"ID":4,"Name":"Phase1","Instant":true,"ExternalBehavior[]externalBehaviors":[2],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":3}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"StartPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":4}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":5}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NoSequencePos1","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":6}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NoSequencePos2","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":7}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"FramePosition","Stringtype":"SharedTransform","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null,"TransformmValue":8}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TalkSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"TalkSource","IsShared":true,"GameObjectmValue":9}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(16.5181561,974.0523)"},"ID":5,"Name":"Phase
+        2","Instant":true,"ExternalBehavior[]externalBehaviors":[10],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":11}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":12}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":13}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":14}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":15}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerLeftHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerRightHand","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimHandsTouch","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsTouch","IsShared":true,"AnimationClipmValue":16}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimHandsClose","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsClose","IsShared":true,"AnimationClipmValue":17}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSeek","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":18}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"SeekSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":19}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimHit","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHit","IsShared":true,"AnimationClipmValue":20}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TalkSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"TalkSource","IsShared":true,"GameObjectmValue":21}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimAngry","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimAngry","IsShared":true,"AnimationClipmValue":22}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"HitSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitSource","IsShared":true,"GameObjectmValue":23}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(328.8461,271.538452)"},"ID":6,"Name":"Phase
+        3","Instant":true,"ExternalBehavior[]externalBehaviors":[24],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimIdle","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":25}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimWalking","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":26}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimPhysicalDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":27}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMinimumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":28}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimMediumDist","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":29}}}],"Booleancollapsed":false},{"Type":"BehaviorDesigner.Runtime.Tasks.BehaviorTreeReference","NodeData":{"Offset":"(691.565369,269.230743)"},"ID":7,"Name":"Phase
+        4","Instant":true,"ExternalBehavior[]externalBehaviors":[30],"SharedNamedVariable[]variables":[{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"PlayerHead","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"DanceSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":31}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"AnimSeek","Stringtype":"SharedAnimationClip","SharedVariablevalue":{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":32}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":33}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"EndPosition","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":34}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportParticles","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":35}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"NPC","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":36}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"TeleportSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":null,"GameObjectmValue":37}}},{"Type":"BehaviorDesigner.Runtime.SharedNamedVariable","Name":null,"NamedVariablemValue":{"Stringname":"SeekSource","Stringtype":"SharedGameObject","SharedVariablevalue":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":38}}}],"Booleancollapsed":false}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerHead","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerLeftHand","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"PlayerRightHand","IsShared":true},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimWalking","IsShared":true,"AnimationClipmValue":39},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimIdle","IsShared":true,"AnimationClipmValue":40},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimClap","IsShared":true,"AnimationClipmValue":41},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimPhysicalDist","IsShared":true,"AnimationClipmValue":42},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMinimumDist","IsShared":true,"AnimationClipmValue":43},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimMediumDist","IsShared":true,"AnimationClipmValue":44},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsTouch","IsShared":true,"AnimationClipmValue":45},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHandsClose","IsShared":true,"AnimationClipmValue":46},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimSeek","IsShared":true,"AnimationClipmValue":47},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimHit","IsShared":true,"AnimationClipmValue":48},{"Type":"SocialPresenceVR.SharedAnimationClip","Name":"AnimAngry","IsShared":true,"AnimationClipmValue":49},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"SeekSource","IsShared":true,"GameObjectmValue":50},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"TalkSource","IsShared":true,"GameObjectmValue":51},{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"HitSource","IsShared":true,"GameObjectmValue":52}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -5710,6 +5837,10 @@ MonoBehaviour:
         - {fileID: -203655887218126122, guid: 9f20d8e75e745df4e94f455fbad16f17, type: 3}
         - {fileID: -203655887218126122, guid: 1f4d1f3aa34325d4a813072d939eafab, type: 3}
         - {fileID: 1564482631682275814}
+        - {fileID: -203655887218126122, guid: aaf5a02b9291f4a4cbd735d0e0f257c0, type: 3}
+        - {fileID: 1787381043}
+        - {fileID: -203655887218126122, guid: 80b69de01fb77b8439459e3f981bf670, type: 3}
+        - {fileID: 809876499008110888}
         - {fileID: 11400000, guid: 4bd467997aa70e448b7b43fdbdc88fe0, type: 2}
         - {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c, type: 3}
         - {fileID: -203655887218126122, guid: 2c9d8327816c6bb4ebc1f088af4c069c, type: 3}
@@ -5734,7 +5865,11 @@ MonoBehaviour:
         - {fileID: -203655887218126122, guid: 80b69de01fb77b8439459e3f981bf670, type: 3}
         - {fileID: -203655887218126122, guid: 9f20d8e75e745df4e94f455fbad16f17, type: 3}
         - {fileID: -203655887218126122, guid: 1f4d1f3aa34325d4a813072d939eafab, type: 3}
+        - {fileID: -203655887218126122, guid: aaf5a02b9291f4a4cbd735d0e0f257c0, type: 3}
+        - {fileID: -203655887218126122, guid: 80b69de01fb77b8439459e3f981bf670, type: 3}
         - {fileID: 1564482631682275814}
+        - {fileID: 1787381043}
+        - {fileID: 809876499008110888}
         byteData: 
         byteDataArray: 
       Version: 1.6.4
@@ -5948,6 +6083,7 @@ Transform:
   - {fileID: 5919190616517879238}
   - {fileID: 705867098904714143}
   - {fileID: 5246016595606399615}
+  - {fileID: 5845420075088490503}
   m_Father: {fileID: 6762766691609240892}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
