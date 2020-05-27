@@ -5,6 +5,9 @@ using System.Collections;
 
 namespace SocialPresenceVR
 {
+    /// <summary>
+    /// TODO: Detectar bien el error
+    /// </summary>
     [TaskDescription("Reproduce un efecto de sonido durante un tiempo")]
     [TaskCategory("SocialPresenceVR/EscapeRoom/Sound")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
@@ -29,7 +32,6 @@ namespace SocialPresenceVR
             }
 
             audioSource.Play();
-
         }
 
         //Cuando la tarea termina, se para el audio
@@ -56,7 +58,6 @@ namespace SocialPresenceVR
                 return TaskStatus.Running;
 
         }
-
 
         public override void OnReset()
         {

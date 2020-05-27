@@ -9,6 +9,7 @@ namespace SocialPresenceVR
     /// <summary>
     /// TODO: Puede estar más comentado el método de CreateAnimatorTransition(), tambien de no Loop
     /// TODO: Clase padre de ambos PlayAnimation
+    /// TODO: Update un poco cutre y puede haber probemas con playAnimation normal
     /// </summary>
     [TaskDescription("Reproduce la animación en bucle")]
     [TaskCategory("SocialPresenceVR/Animations")]
@@ -44,7 +45,7 @@ namespace SocialPresenceVR
             animator = GetComponent<Animator>();
             CreateAnimatorTransition();
         }
- 
+
         /// <summary>
         /// Crea el estado en la máquina de estados y su transición
         /// </summary>
@@ -92,6 +93,9 @@ namespace SocialPresenceVR
         /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
+            if (!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationClip.Value.name))
+                animator.SetTrigger(triggerName);   //play
+
             return TaskStatus.Running;
         }
     }
