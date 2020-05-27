@@ -44,10 +44,16 @@ namespace SocialPresenceVR
         private static List<string> transtionsCreated = new List<string>();
 
         /// <summary>
+        /// Referencia a la rutina en ejecución de espera para la animación
+        /// </summary>
+        private IEnumerator animationRoutine;
+
+        /// <summary>
         /// Crea la transición
         /// </summary>
         public override void OnAwake()
         {
+            animationRoutine = null;
             animator = GetComponent<Animator>();
             CreateAnimatorTransition();
         }
@@ -89,7 +95,17 @@ namespace SocialPresenceVR
         {
             ended = false;
             animator.SetTrigger(triggerName); //Play
-            StartCoroutine(WaitForAnimation());
+
+            animationRoutine = WaitForAnimation();
+            StartCoroutine(animationRoutine);
+        }
+
+
+        public override void OnEnd()
+        {
+            animator.ResetTrigger(triggerName);
+            StopCoroutine(animationRoutine);
+            animationRoutine = null;
         }
 
         /// <summary>

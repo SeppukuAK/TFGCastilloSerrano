@@ -10,7 +10,7 @@ namespace SocialPresenceVR
     /// TODO: Eliminar debug, Refinarlo para que vaya mejor (Mayor complejidad). 
     /// TODO: Es posible que se pueda unificar con mirar objeto.
     /// </summary>
-    [TaskDescription("Devuelve si el jugador está mirando a un GameObject")]
+    [TaskDescription("Devuelve si el jugador está mirando a un GameObject durante 'CheckRate' segundos")]
     [TaskCategory("SocialPresenceVR/PlayerPosition")]
     public class IsPlayerLookingAt : Conditional
     {
@@ -26,15 +26,17 @@ namespace SocialPresenceVR
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Tiempo de duracion de comprobacion de si esta mirando")]
         public float CheckRate;
 
-        private Transform targetTransform;//transform del jugador
-        private Vector3 leftOffset, rightOffset;//Posiciones de los ojos
+        private Vector3 leftOffset, rightOffset;    //Posiciones de los ojos
 
-        //Variables para el contador
-        private float nextCheck;//Siguiente momento en el que va a comprobarse si esta mirando
+        private float nextCheck;    //Instante de tiempo al que si llega, se considera que el jugador ha estado mirando al objeto
 
+        //Variables de control de la rutina
         private bool isLooking;
         private bool isChecking;
 
+        /// <summary>
+        /// Inicialización variables de control y posiciones de los ojos
+        /// </summary>
         public override void OnAwake()
         {
             isChecking = false;
@@ -45,16 +47,11 @@ namespace SocialPresenceVR
             rightOffset = new Vector3(0.1f, 0.1f, 0.1f);
         }
 
-        public override void OnStart()
-        {
-            //Se obtiene el transform del jugador
-            targetTransform = Player.Value.transform;
-
-            nextCheck = Time.time + CheckRate;
-        }
 
         private IEnumerator LookingRoutine()
         {
+            isChecking = true;
+
             //Se inicializa el siguiente instante en el que termina la comprobacion de si el jugador está mirando a un objeto
             nextCheck = Time.time + CheckRate;
 
@@ -70,6 +67,11 @@ namespace SocialPresenceVR
             yield return null;
         }
 
+        public override void OnStart()
+        {
+            nextCheck = Time.time + CheckRate;
+        }
+
         public override void OnEnd()
         {
             isLooking = false;
@@ -82,20 +84,14 @@ namespace SocialPresenceVR
         public override TaskStatus OnUpdate()
         {
             if (isLooking)
-            {
-                Debug.Log("MIRANDO");
                 return TaskStatus.Success;
-            }
 
             else
             {
-                if (!isChecking)
-                {
-                    isChecking = true;
+                //No se está comprobando, empieza comprobación de si está mirando
+                if (!isChecking && RaycastCollideWithObject(Player.Value.transform))
                     StartCoroutine(LookingRoutine());
-                }
 
-                //Si el jugador deja de mirar a un objeto o ha acabado el tiempo y no ha estado mirando a un objeto, devuelve fallo
                 return TaskStatus.Failure;
             }
 

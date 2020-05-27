@@ -87,14 +87,19 @@ namespace SocialPresenceVR
             animator.SetTrigger(triggerName);   //play
         }
 
+        public override void OnEnd()
+        {
+            animator.ResetTrigger(triggerName);
+        }
+
         /// <summary>
         /// Devuelve running continuamente. Esta tarea tiene que ser interrumpida para acabar
         /// </summary>
         /// <returns></returns>
         public override TaskStatus OnUpdate()
         {
-            if (!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationClip.Value.name))
-                animator.SetTrigger(triggerName);   //play
+            //if (!animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationClip.Value.name))
+            //    animator.SetTrigger(triggerName);   //play
 
             return TaskStatus.Running;
         }
