@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6765015c7496d41abb8873e08b5312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloseCaptioned: 0
   Clips:
   - {fileID: 8300000, guid: 5a4cd35a425a3364aadb3fa808a3f3d9, type: 3}
   - {fileID: 8300000, guid: a7cd600e47c255946a3597a75b184727, type: 3}
@@ -163,6 +164,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!114 &7049148469243576359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e36a4b1a548e444ba0aa0963b3e1e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 1744047929243643320}
+  Renderer: {fileID: 1744047929243643320}
 --- !u!114 &8285561671219147690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,7 +260,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: da46f27ebeb7d3947b9497ee161a31ed,
         type: 3}
       propertyPath: m_Name
-      value: BookNavy Variant
+      value: BookNavy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da46f27ebeb7d3947b9497ee161a31ed, type: 3}

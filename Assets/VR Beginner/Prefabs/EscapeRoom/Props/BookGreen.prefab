@@ -15,7 +15,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 3
+  m_CollisionDetection: 0
 --- !u!64 &144272794
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
+  m_RetainTransformParent: 1
 --- !u!114 &1281819552312648701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e36a4b1a548e444ba0aa0963b3e1e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 8435831504925258908}
+  Renderer: {fileID: 8435831504925258908}
 --- !u!114 &2815322795465035172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d6765015c7496d41abb8873e08b5312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CloseCaptioned: 0
   Clips:
   - {fileID: 8300000, guid: 5a4cd35a425a3364aadb3fa808a3f3d9, type: 3}
   - {fileID: 8300000, guid: a7cd600e47c255946a3597a75b184727, type: 3}
@@ -258,7 +260,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 8bf410868a62ffd49834417a557e760c,
         type: 3}
       propertyPath: m_Name
-      value: BookGreen Variant
+      value: BookGreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bf410868a62ffd49834417a557e760c, type: 3}
