@@ -6,7 +6,7 @@ using UnityEngine;
 namespace SocialPresenceVR
 {
     /// <summary>
-    /// Clase base usada para escuchar los eventos de interacción con un objeto
+    /// Clase base usada para escuchar los eventos de interacción eventual con un objeto
     /// TODO: Puede que haya problemas en el futuro con interacion= true, no lo tengo claro
     /// </summary>
     public abstract class OnPlayerInteraction : Conditional
@@ -15,6 +15,7 @@ namespace SocialPresenceVR
         public SharedXRInteractable XRInteractable;
 
         private bool interaction;
+        protected XRBaseInteractable interactable;    //Interactable al que se está suscrito a sus eventos actualmente
 
         /// <summary>
         /// Método que tiene que ser suscrito.
@@ -23,12 +24,57 @@ namespace SocialPresenceVR
         protected abstract void AddListener();
 
         /// <summary>
+        /// Método que tiene que ser suscrito.
+        /// Deja de escuchar al interactable actual
+        /// </summary>
+        protected abstract void RemoveListener();
+
+        /// <summary>
         /// Añade el evento correspondiente
         /// </summary>
         public override void OnAwake()
         {
             interaction = false;
-            AddListener();
+        }
+
+        /// <summary>
+        /// Añade el evento correspondiente
+        /// </summary>
+        public override void OnStart()
+        {
+            //Caso en el que no tiene que detectar ningun interactable
+            if (XRInteractable.Value == null)
+            {
+                interaction = false;
+
+                //Detección de si está detectando alguno actualmente
+                if (interactable != null)
+                {
+                    RemoveListener();
+                    interactable = null;
+                }
+            }
+            else
+            {
+                XRBaseInteractable newInteractable = XRInteractable.Value.GetComponent<XRBaseInteractable>();
+
+                //Deteción de si el objeto pasado no es un interactable
+                if (!newInteractable)
+                    Debug.LogError("El objeto pasado como parámetro no es un interactuable");
+
+                //Caso en el que tiene que detectar algún interactable y no es el que se está detectando actualmente
+                else if (interactable != newInteractable)
+                {
+                    interaction = false;
+
+                    //Si se estaba detectando alguno anteriormente, se deja de escuchar a sus eventos
+                    if (interactable != null)
+                        RemoveListener();
+
+                    interactable = newInteractable;
+                    AddListener();
+                }
+            }
         }
 
         /// <summary>

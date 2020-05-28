@@ -6,7 +6,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 namespace SocialPresenceVR
 {
     /// <summary>
-    /// Clase base usada para escuchar los eventos de interacción con un objeto
+    /// Clase base usada para escuchar los eventos de interacción continua con un objeto
     /// </summary>
     public abstract class IsPlayerInteracting : Conditional
     {

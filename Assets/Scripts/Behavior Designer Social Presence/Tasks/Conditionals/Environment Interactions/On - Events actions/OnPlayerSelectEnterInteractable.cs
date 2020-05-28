@@ -10,5 +10,10 @@ namespace SocialPresenceVR
         {
             XRInteractable.Value.onSelectEnter.AddListener(OnInteraction);
         }
+
+        protected override void RemoveListener()
+        {
+            XRInteractable.Value.onSelectEnter.RemoveListener(OnInteraction);
+        }
     }
 }
