@@ -5,24 +5,23 @@ using UnityEngine.XR.Interaction.Toolkit;
 namespace SocialPresenceVR
 {
     [TaskDescription("Devuelve si el jugador está agarrando el objeto establecido")]
-    [TaskCategory("SocialPresenceVR/EnviromentInteractions")]
+    [TaskCategory("SocialPresenceVR/EnviromentInteractions/ContinuousActions")]
     [TaskIcon("Assets/Behavior Designer Movement/Editor/Icons/{SkinColor}Play.png")]
-    public class IsPlayerGrabbingObject : Conditional
+    public class IsPlayerGrabbingInteractable : Conditional
     {
         [Tooltip("Objeto a detectar si está siendo agarrado")]
-        public SharedGameObject Object;
+        public SharedGameObject XRInteractable;
 
         public override TaskStatus OnUpdate()
         {
-            if (Object.Value)
+            if (XRInteractable.Value)
             {
-                XRBaseInteractable interactable = Object.Value.GetComponent<XRBaseInteractable>();
+                XRBaseInteractable interactable = XRInteractable.Value.GetComponent<XRBaseInteractable>();
                 if (interactable && interactable.isSelected)
                     return TaskStatus.Success;
 
             }
             return TaskStatus.Failure;
         }
-
     }
 }
