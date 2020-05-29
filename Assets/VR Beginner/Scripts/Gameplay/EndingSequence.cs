@@ -44,6 +44,12 @@ public class EndingSequence : MonoBehaviour
             yield return null;
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
