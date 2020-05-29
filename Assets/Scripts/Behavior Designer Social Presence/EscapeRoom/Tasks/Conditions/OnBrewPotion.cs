@@ -19,7 +19,7 @@ namespace SocialPresenceVR
 
         public override void OnAwake()
         {
-            cauldronContent = GetComponent<CauldronContent>();
+            cauldronContent = Object.FindObjectOfType<CauldronContent>();
         }
 
         // Start is called before the first frame update
