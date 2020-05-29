@@ -4087,7 +4087,7 @@ GameObject:
   - component: {fileID: 8181416755211141161}
   - component: {fileID: 8181416755211158567}
   m_Layer: 5
-  m_Name: '[Graphy][World-Space]'
+  m_Name: '[Graphy][WorldSpace]'
   m_TagString: Untagged
   m_Icon: {fileID: 1638116407661442457, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4100,9 +4100,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8181416755204710059}
-  m_LocalRotation: {x: 0, y: 0.98299956, z: -0, w: -0.18360814}
-  m_LocalPosition: {x: 0, y: 0, z: -1.983}
-  m_LocalScale: {x: 0.0004214855, y: 0.0004214855, z: 0.0004214855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0002, y: 0.0002, z: 0.0002}
   m_Children:
   - {fileID: 8181416755184479483}
   - {fileID: 8181416755184496119}
@@ -4110,10 +4110,10 @@ RectTransform:
   - {fileID: 8255649950021376805}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 201.16, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -2.195, y: 1.338}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 2075.9907, y: 999.4413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8181416755184388419
@@ -4193,13 +4193,13 @@ MonoBehaviour:
   m_criticalFpsColor: {r: 0.8627451, g: 0.16078432, b: 0.11764706, a: 1}
   m_fpsGraphResolution: 150
   m_fpsTextUpdateRate: 3
-  m_ramModuleState: 0
+  m_ramModuleState: 4
   m_allocatedRamColor: {r: 1, g: 0.74509805, b: 0.23529412, a: 1}
   m_reservedRamColor: {r: 0.8039216, g: 0.32941177, b: 0.8980392, a: 1}
   m_monoRamColor: {r: 0.3, g: 0.65, b: 1, a: 1}
   m_ramGraphResolution: 150
   m_ramTextUpdateRate: 3
-  m_audioModuleState: 0
+  m_audioModuleState: 4
   m_findAudioListenerInCameraIfNull: 1
   m_audioListener: {fileID: 0}
   m_audioGraphColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   m_FFTWindow: 4
   m_spectrumSize: 512
   m_advancedModulePosition: 3
-  m_advancedModuleState: 0
+  m_advancedModuleState: 4
 --- !u!114 &8181416755211158567
 MonoBehaviour:
   m_ObjectHideFlags: 0
