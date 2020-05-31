@@ -5,6 +5,8 @@ using UnityEditor;
 #if UNITY_EDITOR
 using UnityEditor.Animations;
 #endif
+using System.IO;
+using System;
 
 namespace SocialPresenceVR
 {
@@ -15,7 +17,7 @@ namespace SocialPresenceVR
     /// </summary>
     [TaskDescription("Inicializa NPC con Presencia Social")]
     [TaskCategory("SocialPresenceVR/Init")]
-    public class Init_SP_NPC : Action
+    public class Init_SP_NPC : BehaviorDesigner.Runtime.Tasks.Action
     {
         [BehaviorDesigner.Runtime.Tasks.Tooltip("Altura del jugador en metros")]
         public SharedFloat PlayerHeight;
@@ -26,6 +28,8 @@ namespace SocialPresenceVR
         public SharedBool ResetAnimator = true;
 
         private SP_NPC _SP_NPC;
+
+        public float timePlayed;
 
         public override void OnAwake()
         {
@@ -84,6 +88,26 @@ namespace SocialPresenceVR
             else
                 return TaskStatus.Failure;
         }
+    
+        public override void OnBehaviorComplete()
+        {
+            CreateText();
+            Debug.Log("FIN");
+        }
 
+        void CreateText()
+        {
+            //Path of the file
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiempoJugado");
+
+            float minutesPlayed = Time.time / 60;
+            float secondsPlayed = Time.time % 60;
+            //Content of the file
+            string content = "\n" + "Tiempo jugado: " + (int)minutesPlayed + " minutos" + " y "+ (int)secondsPlayed + " segundos." + "\n";
+
+            //Add some to text to it
+            File.AppendAllText(path, content);
+        }
     }
+
 }
