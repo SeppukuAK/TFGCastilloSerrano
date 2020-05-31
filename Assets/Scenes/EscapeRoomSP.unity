@@ -11272,29 +11272,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1336669846}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1340874922 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1143868509, guid: be89824c796ed5e4fa9a4981a8dd5612,
-    type: 3}
-  m_PrefabInstance: {fileID: 9023787238871333590}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1340874924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340874922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c982bb3e56dfa4b44b145902298917a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathSystem: 0
-  pathval:
-  - {x: 0, y: 0.05, z: 0}
-  - {x: 0, y: -0.05, z: 0}
-  Duration: 3
 --- !u!1 &1342388502
 GameObject:
   m_ObjectHideFlags: 0
@@ -22138,18 +22115,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1143868510, guid: be89824c796ed5e4fa9a4981a8dd5612, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.045
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143868510, guid: be89824c796ed5e4fa9a4981a8dd5612, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1143868510, guid: be89824c796ed5e4fa9a4981a8dd5612, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.91
-      objectReference: {fileID: 0}
     - target: {fileID: 679535520162632644, guid: be89824c796ed5e4fa9a4981a8dd5612,
         type: 3}
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[4]
@@ -22250,11 +22215,6 @@ PrefabInstance:
       propertyPath: mBehaviorSource.mTaskData.fieldSerializationData.unityObjects.Array.data[90]
       value: 
       objectReference: {fileID: 2093041026}
-    - target: {fileID: 5336167502391872019, guid: be89824c796ed5e4fa9a4981a8dd5612,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d5c0dc78f40c06c4e9356a3218da955b, type: 2}
     - target: {fileID: 6762766691609240892, guid: be89824c796ed5e4fa9a4981a8dd5612,
         type: 3}
       propertyPath: m_LocalPosition.x
