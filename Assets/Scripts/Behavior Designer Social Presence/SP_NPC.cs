@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using UnityEditor;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
-using UnityEngine.XR.Interaction.Toolkit;
+#endif
 
 namespace SocialPresenceVR
 {
@@ -10,11 +10,6 @@ namespace SocialPresenceVR
     /// </summary>
     public class SP_NPC : MonoBehaviour
     {
-        /// <summary>
-        /// Animator controller asociado al NPC
-        /// </summary>
-        public AnimatorController AnimatorController { get; set; }
-
         /// <summary>
         /// Altura del jugador
         /// </summary>
@@ -26,22 +21,18 @@ namespace SocialPresenceVR
         public GameObject Hand { get; set; }
 
         /// <summary>
-        /// Ruta donde se encuentra el animator controller creado para el NPC
-        /// </summary>
-        public string AnimatorControllerPath { get; set; }
-
-        /// <summary>
         /// Información actual del objeto interactuable agarrado
         /// </summary>
         public InteractableInfo GrabbedInteractable;
 
-        /// <summary>
-        /// Destruye el asset del animator controller
-        /// </summary>
-        private void OnDestroy()
-        {
-            AssetDatabase.DeleteAsset(AnimatorControllerPath);
-        }
+#if UNITY_EDITOR
 
+        /// <summary>
+        /// Animator controller asociado al NPC
+        /// </summary>
+        public AnimatorController AnimatorController { get; set; }
+
+        public bool ResetAnimator { get; set; }
+#endif
     }
 }

@@ -21133,6 +21133,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3208528211867408455, guid: 358b0eb736b06da40986b005d9aa1146,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4954665676858572601, guid: 358b0eb736b06da40986b005d9aa1146,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22273,7 +22278,7 @@ PrefabInstance:
     - target: {fileID: 7746602170008508207, guid: be89824c796ed5e4fa9a4981a8dd5612,
         type: 3}
       propertyPath: m_Name
-      value: NPCRaul
+      value: NPC_SP
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be89824c796ed5e4fa9a4981a8dd5612, type: 3}

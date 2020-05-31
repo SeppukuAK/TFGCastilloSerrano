@@ -2755,6 +2755,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[Graphy][WorldSpace]'
       objectReference: {fileID: 0}
+    - target: {fileID: 8181416755204710059, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8181416755204717375, guid: 5119f91e6d329fb478dcd823ca07b3d8,
         type: 3}
       propertyPath: m_IsActive
@@ -2804,6 +2809,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseGraphicAlpha
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211235945, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211235945, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectDistance.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211235945, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_EffectDistance.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181416755211235945, guid: 5119f91e6d329fb478dcd823ca07b3d8,
+        type: 3}
+      propertyPath: m_UseGraphicAlpha
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 8181416755211261981, guid: 5119f91e6d329fb478dcd823ca07b3d8,
         type: 3}
