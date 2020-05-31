@@ -98,7 +98,7 @@ namespace SocialPresenceVR
         void CreateText()
         {
             //Path of the file
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TiempoJugado");
+            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TiempoJugado.txt");
 
             float minutesPlayed = Time.time / 60;
             float secondsPlayed = Time.time % 60;
